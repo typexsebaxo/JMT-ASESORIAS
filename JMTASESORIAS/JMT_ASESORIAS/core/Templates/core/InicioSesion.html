@@ -10,22 +10,26 @@
     {% load static %}
 
      <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-         <!-- Fuentes -->
-    <link href="{% static 'core/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 </head>
 <body>
     <main>
 
+        <!-- Navbar -->
+        <nav class="navbar navbar" style=" opacity: 70; background-color:#8e5e2b; " >
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbarasads</a>
+            </div>
+        </nav>
+        
+        
 
-    
-        <img src="https://jmtasesorias.cl/wp-content/uploads/2022/03/JMT-LOGOperfil1-PhotoRoom-141x103.png" class="img-fluid" alt="img">
-
-
+        <h1>hola mundo!</h1>
 
 
     <!--Footer Section -->
@@ -42,16 +46,8 @@
     <!-- FIN Footer Section -->
    
 
-    <!-- Preacargar JS Boostrap al final del documento -->
-    <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
-<!-- Bootstrap core JavaScript -->
-<!-- JavaScript Bundle with Popper -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<script src="{% static 'core/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'core/bootstrap-5.1.3/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'core/bootstrap-5.1.3/js/JavaScript.js' %}"></script>
-
-
 </main>
 </body>
 </html>
