@@ -1,87 +1,30 @@
-.footer {
-    background-color: #343a40;
-    color: white;
+body{
+background-image: url('https://lambdatres.com/wp-content/uploads/2019/01/light-828547_1280.jpg');
+background-repeat: no-repeat;
+background-size:cover;
+height: 100vh"
 }
 
-.footer a {
-    color: white;
-    background-color: #343a40;
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #b39f56;
+      
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(179, 159, 86, 0.6), rgba(196, 107, 23, 0.6));
+      
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(179, 159, 86, 0.6), rgba(196, 107, 23, 0.6))
 }
 
-.footer a:hover {
-    color: #007bff;
-}
-
-.carousel .carousel-indicators li {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-body {
-    background-color: white;
-}
-
-.card {
-    background-color: white;
-    color: black;
-}
-
-.body-container {
-    background-color: white;
-}
-
-.btn-primary:hover{
-    color: black;
-    border-color: black;
-    background-color: #C70039;
-}
-
-.btn-outline-success {
-    background-color: #343a40;
-    color: red;
-    border-color: red;
-}
-
-.btn-outline-success:hover {
-    background-color: #C70039;
-    color: black;
-    border-color: black;
-}
-
-.btn-primary {
-    color: white;
-    background-color: #343a40 ;
-    border-color: red;
-
-}
-
-.btn-secondary {
-    color: white;
-    background-color: gray;
-    border-color: red;
-}
-
-.btn-secondary:hover{
-    color: black;
-    border-color: black;
-    background-color: #C70039;
-}
-
-.reloj { 
-    color: whitesmoke;
-    width: 250px;
-    height: 50px; 
-    padding: 9px 18px; 
-    border: 2px solid #ff7300; 
-    font: bold 1em dotum, "lucida sans", arial; 
-    text-align: center;
-    float: right; margin: 1em 3em 1em 1em;
-}
-
-.marco {
-    height: 400px;
-    width: 400px;
-    border: 2px solid black;
-    border-radius: 800px;
+@media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
     }
+    }
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+
