@@ -9,3 +9,6 @@ def InicioSesion(request):
 
 def Menuadmin(request):
  return render(request,"core/menuadmin.html")
+
+def Admintasador(request):
+    return render(request,"core/admintasador.html")

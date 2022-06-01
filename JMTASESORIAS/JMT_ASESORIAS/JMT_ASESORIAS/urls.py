@@ -21,6 +21,7 @@ from django.conf import settings
 urlpatterns = [
     path('inicioSesion/',views.InicioSesion, name='InicioSesion'),
     path('menuadmin/',views.Menuadmin, name='menuadmin'),
+    path('admintasador/',views.Admintasador, name='admintasador'),
 ]
 
 if settings.DEBUG:
