@@ -19,7 +19,8 @@ from core import views
 from django.conf import settings
 
 urlpatterns = [
-    path('',views.InicioSesion, name='InicioSesion'),
+    path('inicioSesion/',views.InicioSesion, name='InicioSesion'),
+    path('menuadmin/',views.Menuadmin, name='menuadmin'),
 ]
 
 if settings.DEBUG:

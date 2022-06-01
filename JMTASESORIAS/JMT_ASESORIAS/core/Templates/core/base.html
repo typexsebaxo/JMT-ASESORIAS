@@ -4,138 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Implementando Bootstrap PGY3121-001D">
-    <meta name="author" content="Esteban Dido">
-    <meta name="keywords" content="bootstrap"> 
-
+    <meta name="keywords" content="bootstrap">
     
-    <title>{% block title %}{% endblock %}Vision Gaming | Hardware y mas!</title>
+
+    <title>{% block title %}{% endblock %} JMT asesorías</title>
     {% load static %}
+
+    <link rel="icon" href="{% static 'core/img/logo.png' %}">
+
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+      <!-- Fuentes -->
+      
+      <link href="{% static 'core/font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="{% static 'core/font-awesome/css/font-awesome.min.css' %}">
+
+      <!-- Estilos -->
+      <link href="{% static 'core/css/styles.css' %}" rel="stylesheet">
+
     
-    <!-- Bootstrap -->
-    <link href="{% static 'core/bootstrap-5.1.3/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'core/bootstrap-5.1.3/css/JavaScript.css' %}">
-
-    <!-- Fuentes -->
-    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-
-    <!-- Estilos -->
-    <link href="{% static 'core/css/styles.css' %}" rel="stylesheet">
 
 </head>
+<body>
+    
+    <main>
 
-     <!--Navbar-->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="{% static 'core/img/logo2.png' %}" alt="LOGO" width="257px" height="60px">
-<button class="navbar-toggler" type="button" data-toggle="collapse"
- data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-  aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
+        <!--Header-->
 
-<div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-        <li class="nav-item">
+            <!-- Navbar -->
+            <nav class="navbar navbar-light" style="background-color: #DAB88B;">
+                <div class="container">
+                  <a class="navbar-brand" href="#">
+                    <img
+                      src="{% static 'core/img/logo.png' %}" height="50" alt="MDB Logo" loading="lazy"
+                    />
+                  </a>
+                </div>
+              </nav>
+            <!--Fin navbar-->
+
             
-            <a class="nav-link" href="/">Inicio </a>
-        </li>
+        <!--Fin Header-->
         
-        <li class="nav-item">
-            <a class="nav-link" href="/cotizacion/">Cotización</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/contact/">Contactanos!</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/conocenos/">Nosotros</a>
-        </li>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Control de Productos
-            </button>
-            
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="/listarproducto">Lista de productos</a>
-                {% if perms.core.add_producto %}
-              <a class="dropdown-item" href="/agregarproducto/">Agregar productos</a>
-                {% endif %}
-              
-            </div>
-          </div>
-    </ul>
-</div>
-
-<button onclick="apagarLuz()" style="background-color: #343a40;"><img class="logo-luna" src="{% static 'core/img/luna.png' %}" height="25px"></button>
-<button onclick="encenderLuz()" style="background-color: #343a40;"><img class="logo-luna" src="{% static 'core/img/sol.png' %}" height="25px"></button>
-
-
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-    </form>
-    <ul class="navbar-nav">
-        <li class="nav-item "> 
-            <a class="nav-link" href="{% url 'iniciosesion' %}">| Iniciar sesión <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" href="{% url 'registro' %}">| Registrarse <span class="sr-only">(current)</span></a>
-        </li>
-    </ul>
-</nav>
-<!--Fin navbar-->
-
-{% block content %}{% endblock %}    
 
     <!--Footer Section -->
-    <footer class="footer bg-dark mt-4 py-3">
-       
-        <div class="container">
-            <div class="card-footer text-center">
-                <img src="{% static 'core/img/logo.png' %}" alt="LOGO" width="100" height="100px">
-            </div>
-            <div class="card-footer text-center">
-                <a class="card-link" href="http://www.facebook.com">
-                    <span style="font-size: 2em;">
-                        <i class="fa fa-facebook-f" style="color: red;"></i>
-                    </span>
-                </a>
-                <a class="card-link" href="http://www.instagram.com">
-                    <span style="font-size: 2em;">
-                        <i class="fa fa-instagram" style="color: red;"></i>
-                    </span>
-                </a>
-                <a class="card-link" href="http://www.twitter.com">
-                    <span style="font-size: 2em;">
-                        <i class="fa fa-twitter" style="color: red;"></i>
-                    </span>
-                </a>
-                <a class="card-link" href="http://www.twitch.com">
-                    <span style="font-size: 2em;">
-                        <i class="fa fa-twitch" style="color: red;" ></i>
-                    </span>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-3 mt-3 justify-content-center ">
-                
-            </div>
+  
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
+            ><i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+      
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/home" role="button"
+            ><i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+      
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
+            ><i class="fa fa-google" aria-hidden="true"></i>
+            </a>
+      
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
+            ><i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
             
-            <p class="main-footer text-center" style="color: gray;">Comercializadora S.A., Rut N° xxxx domiciliada en calle xxx, Santiago, Chile. Represente legal: xxxx</p>
-            </div>
-            
+      
+          </section>
+          <!-- Section: Social media -->
         </div>
-    </footer>
-    <!-- FIN Footer Section -->
-   
-
-    <!-- Preacargar JS Boostrap al final del documento -->
-    <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
-<!-- Bootstrap core JavaScript -->
-<script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'core/bootstrap-5.1.3/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'core/bootstrap-5.1.3/js/JavaScript.js' %}"></script>
-</main>
-    
-</body>
-</html>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          Copyright © 2022:
+          <a class="text-white" href="https://jmtasesorias.cl/">JMT Asesoría Inmobiliaria</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+  
+  
+      <!-- FIN Footer Section -->
+     
+  
+  
+      <!--Bootstrap 5 code -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </main>
+  </body>
+  </html>

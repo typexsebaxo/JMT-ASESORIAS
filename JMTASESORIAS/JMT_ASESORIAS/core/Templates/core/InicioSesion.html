@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="bootstrap"> 
+    <meta name="keywords" content="bootstrap">
+    
 
     <title>{% block title %}{% endblock %} JMT asesorías</title>
     {% load static %}
+
+    <link rel="icon" href="{% static 'core/img/logo.png' %}">
 
      <!-- CSS only -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,6 +24,8 @@
 
       <!-- Estilos -->
       <link href="{% static 'core/css/styles.css' %}" rel="stylesheet">
+
+      <link id="pagestyle" href="{% static 'core/css/material-dashboard.css' %}" rel="stylesheet" />
 
     
 
@@ -78,7 +83,7 @@
                             </div>
           
                             <div class="text-center pt-1 mb-5 pb-1">
-                              <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Ingresar</button>
+                              <a class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/menuadmin/">Ingresar</a>
                               <a class="text-muted" href="#!">Olvidaste tu contraseña?</a>
                             </div>
           
