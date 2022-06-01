@@ -177,50 +177,302 @@
           </nav>
 
         <!-- Fin Navbar -->
+        <div class="container-fluid px-2 px-md-4">
+            <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url(https://pixabay.com/get/gfaca13a82bf139c040fdc82c909b3331a7b0bc1656a2a177905432d9980f3f3bced77db24f41dff29c6a8e6412c72542.png);">
+              <span class="mask  bg-gradient-primary  opacity-4"></span>
+            </div>
+            <div class="card card-body mx-3 mx-md-4 mt-n6">
+              <div class="row gx-4 mb-2">
+                <div class="col-auto">
+                  <div class="avatar avatar-xl position-relative">
+                    <img src="{% static 'core/img/avatar3.jpg' %}" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                  </div>
+                </div>
+                <div class="col-auto my-auto">
+                  <div class="h-100">
+                    <h5 class="mb-1">
+                        Giovanny Otárola.
+                    </h5>
+                    <p class="mb-0 font-weight-normal text-sm">
+                      CEO / Co-Fundador
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="row">
+                  <div class="col-12 col-xl-4">
+                    <div class="card card-plain h-100">
+                      <div class="card-header pb-0 p-3">
+                        <div class="row">
+                          <div class="col-md-8 d-flex align-items-center">
+                            <h6 class="mb-0">Informacion de perfil</h6>
+                          </div>
+                          <div class="col-md-4 text-end">
+                            <a href="javascript:;">
+                              <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body p-3">
+                        <p class="text-sm">
+                            Gestor y Analista Tasador. Coordinador con propietarios y/o arrendatarios para realizar levantamiento in situ en las propiedades a tasar y
+                             realizar análisis de mercado en informe de tasación.
+                        </p>
+                        <hr class="horizontal gray-light my-4">
+                        <ul class="list-group">
+                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre completo:</strong> &nbsp; Giovanny Otárola.</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Numero:</strong> &nbsp; (56) 967 845 369</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; giotarola@mail.com</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Region:</strong> &nbsp; Metropolitana</li>
+                          <li class="list-group-item border-0 ps-0 pb-0">
+                            <strong class="text-dark text-sm">Social:</strong> &nbsp;
+                            <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="https://www.facebook.com/">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn btn-twitter btn-simple mb-0 ps-1 pe-2 py-0" href="https://twitter.com/home">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn btn-instagram btn-simple mb-0 ps-1 pe-2 py-0" href="https://www.instagram.com/">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-4">
+                    <div class="card card-plain h-100">
+                      <div class="card-header pb-0 p-3">
+                        <h6 class="mb-0">Chat</h6>
+                      </div>
+                      <div class="card-body p-3">
+                        <ul class="list-group">
+                          <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2 pt-0">
+                            <div class="avatar me-3">
+                              <img src="{% static 'core/img/avatar1.jpg' %}" alt="kal" class="border-radius-lg shadow">
+                            </div>
+                            <div class="d-flex align-items-start flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Paulo Rojas </h6>
+                              <p class="mb-0 text-xs">Hola necesito información</p>
+                            </div>
+                            <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Contestar</a>
+                          </li>
+                          <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="avatar me-3">
+                              <img src="{% static 'core/img/avatar2.jpg' %}" alt="kal" class="border-radius-lg shadow">
+                            </div>
+                            <div class="d-flex align-items-start flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Danko Osorio</h6>
+                              <p class="mb-0 text-xs">Hola podrias mandarme el arch...</p>
+                            </div>
+                            <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Contestar</a>
+                          </li>
+                          <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="avatar me-3">
+                              <img src="{% static 'core/img/avatar4.jpg' %}" alt="kal" class="border-radius-lg shadow">
+                            </div>
+                            <div class="d-flex align-items-start flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Ivanna Contreras</h6>
+                              <p class="mb-0 text-xs">Acerca de una cotizacion...</p>
+                            </div>
+                            <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Contestar</a>
+                          </li>
+                          <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                            <div class="avatar me-3">
+                              <img src="{% static 'core/img/avatar6.jpg' %}" alt="kal" class="border-radius-lg shadow">
+                            </div>
+                            <div class="d-flex align-items-start flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Jorge Gonzales</h6>
+                              <p class="mb-0 text-xs">Nos vemos mañana</p>
+                            </div>
+                            <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Contestar</a>
+                          </li>
+                          <li class="list-group-item border-0 d-flex align-items-center px-0">
+                            <div class="avatar me-3">
+                              <img src="{% static 'core/img/avatar5.jpg' %}" alt="kal" class="border-radius-lg shadow">
+                            </div>
+                            <div class="d-flex align-items-start flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Felipe Camiroaga</h6>
+                              <p class="mb-0 text-xs">Chao</p>
+                            </div>
+                            <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Contestar</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <div class="mb-5 ps-3">
+                      <h6 class="mb-1">Projectos</h6>
+                      <p class="text-sm">Casas en Región Metropolitana</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                        <div class="card card-blog card-plain">
+                          <div class="card-header p-0 mt-n4 mx-3">
+                            <a class="d-block shadow-xl border-radius-xl">
+                              <img src="{% static 'core/img/casa1.jpg' %}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                            </a>
+                          </div>
+                          <div class="card-body p-3">
+                            <p class="mb-0 text-sm">Casa Z</p>
+                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
+                              <h5>
+                                Barrio Las Flores
+                              </h5>
+                            </a>
+                            <p class="mb-1 text-sm">
+                                Equipo De Diseño : Pezestudio
+                            </p>
+                            <p class="mb-1 text-sm">
+                                Clientes : Gonzalo Cáceres Dancuart
+                            </p>
+                            <div class="d-flex align-items-center justify-content-between">
+                              <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
+                              <div class="avatar-group mt-2">
+                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Elena Morison">
+                                  <img alt="Image placeholder" src="{% static 'core/img/avatar2.jpg' %}">
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                        <div class="card card-blog card-plain">
+                          <div class="card-header p-0 mt-n4 mx-3">
+                            <a class="d-block shadow-xl border-radius-xl">
+                              <img src="{% static 'core/img/casa2.jpg' %}" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
+                            </a>
+                          </div>
+                          <div class="card-body p-3">
+                            <p class="mb-0 text-sm">Casa PA</p>
+                            <a href="https://www.plataformaarquitectura.cl/cl/703793/casa-pa-slash-tabuenca-and-leache?ad_medium=widget&ad_name=category-houses-article-show">
+                              <h5>
+                                Barrio Suecia
+                              </h5>
+                            </a>
+                            <p class="mb-1 text-sm">
+                                Equipo De Diseño : De Rosee Sa
+                            </p>
+                            <p class="mb-1 text-sm">
+                                Clientes : Will Scott
+                            </p>
+                            <div class="d-flex align-items-center justify-content-between">
+                              <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
+                              <div class="avatar-group mt-2">
+                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nick Daniel">
+                                  <img alt="Image placeholder" src="{% static 'core/img/avatar3.jpg' %}">
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                        <div class="card card-blog card-plain">
+                          <div class="card-header p-0 mt-n4 mx-3">
+                            <a class="d-block shadow-xl border-radius-xl">
+                              <img src="{% static 'core/img/casa3.jpg' %}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                            </a>
+                          </div>
+                          <div class="card-body p-3">
+                            <p class="mb-0 text-sm">Casa ARN 01</p>
+                            <a href="https://www.plataformaarquitectura.cl/cl/980864/casa-arn-01-i-da-arquitectos?ad_source=search&ad_medium=projects_tab">
+                              <h5>
+                                Barrio Plaza Sucre
+                              </h5>
+                            </a>
+                            <p class="mb-1 text-sm">
+                                Equipo De Diseño : Outras Paisagens
+                            </p>
+                            <p class="mb-1 text-sm">
+                                Clientes : Ivan de Sousa
+                            </p>
+                            <div class="d-flex align-items-center justify-content-between">
+                              <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
+                              <div class="avatar-group mt-2">
+                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Peterson">
+                                  <img alt="Image placeholder" src="{% static 'core/img/avatar4.jpg' %}">
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                        <div class="card card-blog card-plain">
+                          <div class="card-header p-0 mt-n4 mx-3">
+                            <a class="d-block shadow-xl border-radius-x1">
+                                <img src="{% static 'core/img/casa4.jpg' %}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                            </a>
+                          </div>
+                          <div class="card-body p-3">
+                            <p class="mb-0 text-sm">House in Dinamarca</p>
+                            <a href="https://www.plataformaarquitectura.cl/cl/703650/house-in-madrid-slash-a-cero?ad_medium=widget&ad_name=category-houses-article-show">
+                              <h5>
+                                Barrio Dinamarca
+                              </h5>
+                            </a>
+                            <p class="mb-1 text-sm">
+                                Equipo De Diseño : MdA Arquitectura
+                            </p>
+                            <p class="mb-1 text-sm">
+                                Clientes : Zevallos  Celle family
+                            </p>
 
+                            <div class="d-flex align-items-center justify-content-between">
+                              <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
+                              <div class="avatar-group mt-2">
+                                <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Peterson">
+                                  <img alt="Image placeholder" src="{% static 'core/img/avatar5.jpg' %}">
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
         <!--Footer Section -->
     
-        <footer class="bg-dark text-center text-white">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
-                ><i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-        
-                <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/home" role="button"
-                ><i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-        
-                <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
-                ><i class="fa fa-google" aria-hidden="true"></i>
-                </a>
-        
-                <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
-                ><i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-                
-        
-            </section>
-            <!-- Section: Social media -->
+        <footer class="footer py-4  ">
+            <div class="container-fluid">
+              <div class="row align-items-center justify-content-lg-between">
+                <div class="col-lg-6 mb-lg-0 mb-4">
+                  <div class="copyright text-center text-sm text-muted text-lg-start">
+                    ©<script>
+                      document.write(new Date().getFullYear())
+                    </script> Copyright
+                    <a href="https://jmtasesorias.cl/" class="font-weight-bold" target="_blank">JMT Asesoría Inmobiliaria</a>
+                    
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                    <li class="nav-item">
+                      <a href="https://www.facebook.com/" class="nav-link text-muted" target="_blank">facebook</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://twitter.com/home" class="nav-link text-muted" target="_blank">twitter</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://www.instagram.com/" class="nav-link text-muted" target="_blank">instagram</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <!-- Grid container -->
-        
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            Copyright © 2022:
-            <a class="text-white" href="https://jmtasesorias.cl/">JMT Asesoría Inmobiliaria</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
+          </footer>
   
   
       <!-- FIN Footer Section -->
