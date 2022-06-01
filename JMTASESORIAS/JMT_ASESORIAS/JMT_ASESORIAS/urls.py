@@ -22,6 +22,7 @@ urlpatterns = [
     path('inicioSesion/',views.InicioSesion, name='InicioSesion'),
     path('menuadmin/',views.Menuadmin, name='menuadmin'),
     path('admintasador/',views.Admintasador, name='admintasador'),
+    path('menutasacionadmin/',views.Menutasacionadmin, name='menutasacionadmin'),
 ]
 
 if settings.DEBUG:
