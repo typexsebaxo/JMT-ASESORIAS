@@ -15,3 +15,6 @@ def Admintasador(request):
 
 def Menutasacionadmin(request):
     return render(request,"core/menutasacionadmin.html")
+
+def Graficostasacion(request):
+    return render(request,"core/graficostasacion.html")
