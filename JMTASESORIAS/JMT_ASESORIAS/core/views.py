@@ -18,3 +18,6 @@ def Menutasacionadmin(request):
 
 def Graficostasacion(request):
     return render(request,"core/graficostasacion.html")
+
+def Notificacionesadmin(request):
+    return render(request,"core/notificacionesadmin.html")
