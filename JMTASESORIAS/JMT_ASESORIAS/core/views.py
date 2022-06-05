@@ -21,3 +21,6 @@ def Graficostasacion(request):
 
 def Notificacionesadmin(request):
     return render(request,"core/notificacionesadmin.html")
+
+def Creatasador(request):
+    return render(request,"core/creatasador.html")
