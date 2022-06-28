@@ -26,6 +26,7 @@ urlpatterns = [
     path('graficostasacion/',views.Graficostasacion, name='graficostasacion'),
     path('notificacionesadmin/',views.Notificacionesadmin, name='notificacionesadmin'),
     path('creatasador/',views.Creatasador, name='creatasador'),
+    path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
