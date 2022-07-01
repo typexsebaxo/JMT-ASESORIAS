@@ -62,32 +62,33 @@
                             <h4 class="mt-1 mb-5 pb-1">Somos JMT Asesorías!</h4>
                             <span class="d-block text-muted">Ingrese sus datos</span>
                           </div>
-          
-                          <form class="form-group form-group-feedback form-group-feedback-left">
-                            
+                          <br >
+                          <form class="form-group form-group-feedback form-group-feedback-left">{% csrf_token %}
+                            <div class="container">
                             <div class="form-outline mb-4">
-                              <label class="form-label">Email</label>
-                              <input type="email" id="email" class="form-control"
+                              <label for="email" class="form-controllabel">Email</label>
+                              <input name="email" type="email" id="email" class="form-control"
                                 placeholder="Ingrese su correo" required autocomplete="email" >
                             </div>
           
                             <div class="form-outline mb-4">
-                              <label class="form-label">Contraseña</label>
-                              <input type="password" id="password" class="form-control" 
+                              <label for="password" class="form-label">Contraseña</label>
+                              <input name="password" type="password" id="password" class="form-control" 
                               placeholder="Ingrese su contraseña" required autocomplete="password">
                              </div>
                             <div class="text-center pt-1 mb-5 pb-1">
-                              <a type="submit" class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/menuadmin/">Ingresar</a>
+                              <button type="submit" class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/menuadmin/">Ingresar</button>
+                              <br>
+                              <span class="password">Olvidaste tu <a href="#">contraseña?</a></span>
                             </div>
-                            <div class="text-center">
-                              <a class="text-muted" href="#!">Olvidaste tu contraseña?</a>
-                            </div>
+                          </div>
                           </form>
                       </div>
                       </div>
                       <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                         <div class="text-black px-3 py-4 p-md-5 mx-md-4">
                           <h4 class="text-center">JMT ASESORÍA Y CONSULTORÍA INMOBILIARIA SpA.</h4>
+                          <br>
                           <p class="small mb-0">Empresa dedicada a realizar la valoración de bienes inmuebles, dando un servicio de apoyo y solución en forma personalizada y oportuna.
                             Contamos con un grupo de personas con larga trayectoria en el rubro. Nos ocupamos de generar las condiciones de trabajo óptimas, en un ambiente profesional
                             y participativo, cumpliendo con los más altos estándares de servicio.</p>

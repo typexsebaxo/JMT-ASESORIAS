@@ -10364,3 +10364,5 @@ return jQuery;
 } );
 
 
+//llamar pop-up creatasador
+(<a href="/creatasador.htm" target="popup" onClick="crear_tasador(this.href, this.target, 'width=300,height=400'); return false;"></a>)
