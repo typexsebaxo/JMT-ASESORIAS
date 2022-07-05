@@ -26,3 +26,5 @@ def Notificacionesadmin(request):
 
 def Creatasador(request):
     return render(request,"core/creatasador.html")
+
+
