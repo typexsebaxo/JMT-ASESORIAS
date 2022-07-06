@@ -1,12 +1,8 @@
 from django.db import models
-import cx_Oracle
 
 #  Create your models here.
 
-# Conexion a Oracle Database 11g Express Edition(XE)
-con = cx_Oracle.connect("c##JMT", "oracle", "localhost/xe")
-print("Connected!")
-con.close()
+
 
 class usuario(models.Model):
     id_usuario = models.AutoField(primary_key=True)
@@ -100,6 +96,3 @@ class tasador(models.Model):
     class Meta:
         managed = False
         db_table = 'tasador'
-
-
-
