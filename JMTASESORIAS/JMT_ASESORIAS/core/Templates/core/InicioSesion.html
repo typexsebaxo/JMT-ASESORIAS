@@ -63,25 +63,25 @@
                             <span class="d-block text-muted">Ingrese sus datos</span>
                           </div>
                           <br >
-                          <form class="form-group form-group-feedback form-group-feedback-left">{% csrf_token %}
-                            <div class="container">
+                          <form>
+                            <p>Ingresa a tu cuenta</p>
+          
                             <div class="form-outline mb-4">
-                              <label for="email" class="form-controllabel">Email</label>
-                              <input name="email" type="email" id="email" class="form-control"
-                                placeholder="Ingrese su correo" required autocomplete="email" >
+                              <input type="email" id="form2Example11" class="form-control"
+                                placeholder="Phone number or email address" />
+                              <label class="form-label" for="form2Example11">Usuario</label>
                             </div>
           
                             <div class="form-outline mb-4">
-                              <label for="password" class="form-label">Contraseña</label>
-                              <input name="password" type="password" id="password" class="form-control" 
-                              placeholder="Ingrese su contraseña" required autocomplete="password">
-                             </div>
-                            <div class="text-center pt-1 mb-5 pb-1">
-                              <button type="submit" class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/menuadmin/">Ingresar</button>
-                              <br>
-                              <span class="password">Olvidaste tu <a href="#" style="color: blue;">contraseña?</a></span>
+                              <input type="password" id="form2Example22" class="form-control" />
+                              <label class="form-label" for="form2Example22">Contraseña</label>
                             </div>
-                          </div>
+          
+                            <div class="text-center pt-1 mb-5 pb-1">
+                              <a class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/menuadmin/">Ingresar</a>
+                              <a class="text-muted" href="#!">Olvidaste tu contraseña?</a>
+                            </div>
+          
                           </form>
                       </div>
                       </div>
