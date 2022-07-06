@@ -26,6 +26,8 @@ urlpatterns = [
     path('graficostasacion/',views.Graficostasacion, name='graficostasacion'),
     path('notificacionesadmin/',views.Notificacionesadmin, name='notificacionesadmin'),
     path('creatasador/',views.Creatasador, name='creatasador'),
+    path('menutasador/',views.Menutasador, name='menutasador'),
+    path('misproyectos/',views.Misproyectos, name='misproyectos'),
     path('admin/', admin.site.urls),
 ]
 

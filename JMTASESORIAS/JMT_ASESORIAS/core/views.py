@@ -27,4 +27,8 @@ def Notificacionesadmin(request):
 def Creatasador(request):
     return render(request,"core/creatasador.html")
 
-
+def Menutasador(request):
+    return render(request,"core/menutasador.html")
+    
+def Misproyectos(request):
+    return render(request,"core/misproyectos.html")
