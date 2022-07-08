@@ -1,98 +1,109 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-#  Create your models here.
 
 
-
-class usuario(models.Model):
-    id_usuario = models.AutoField(primary_key=True)
-    email = models.CharField(max_length = 150, blank=True, null=True)
-    password = models.CharField(max_length = 50, blank=True, null=True)
-    class Meta:
-        managed = False
-        db_table = 'usuario'
-
-class admin(models.Model):
+class Administrador(models.Model):
     id_admin = models.AutoField(primary_key=True)
-    nombre_admin = models.CharField(max_length = 50, blank=True, null=True)
-    rut_admin = models.CharField(max_length = 10, unique = True, blank=True, null=True)
-    correo_admin = models.CharField(max_length = 150, blank=True, null=True)
-    telefono_admin = models.IntegerField(("11"), blank=True, null=True)
-    ciudad_nombre_ciudad = models.CharField(max_length = 50, blank=True, null=True)
-    usuario_id_usuario = models.IntegerField(("11"), blank=True, null=True)
-    id_usuario = models.ForeignKey(usuario, models.DO_NOTHING, db_column='id_usuario', blank=True, null=True)
+    nombre_admin = models.CharField(max_length=50)
+    rut_admin = models.CharField(max_length=10)
+    correo_admin = models.CharField(max_length=150)
+    telefono_admin = models.BigIntegerField()
+    ciudad_nombre_ciudad = models.ForeignKey('Ciudad', models.DO_NOTHING, db_column='ciudad_nombre_ciudad')
+    usuario_id_usuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_id_usuario')
+    id_usuario = models.BigIntegerField()
+
     class Meta:
         managed = False
-        db_table = 'admin'
+        db_table = 'administrador'
 
 
-class region(models.Model):
-    numero_region = models.IntegerField(("11"), blank=True, null=True)
-    nombre_region = models.TextField(max_length = 50, blank=True, null=True)
-    class Meta:
-        managed = False
-        db_table = 'region'
+class Ciudad(models.Model):
+    nombre_ciudad = models.CharField(primary_key=True, max_length=50)
+    comuna_ciudad = models.CharField(max_length=50)
+    region_numero_region = models.ForeignKey('Region', models.DO_NOTHING, db_column='region_numero_region')
 
-class  ciudad(models.Model):
-    nombre_ciudad = models.CharField(max_length = 50, blank=True, null=True)
-    comuna_ciudad = models.CharField(max_length = 50, blank=True, null=True)
-    region_numero_region = models.ForeignKey(region, models.DO_NOTHING, db_column='region_numero_region', blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'ciudad'
 
-class horario_lab(models.Model):
-    fecha = models.DateField((""), auto_now=False, auto_now_add=False)
-    hora_inicio = models.TimeField(auto_now=False, auto_now_add=False)
-    hora_termino = models.TimeField(auto_now=False, auto_now_add=False)
-    class Meta:
-        managed = False
-        db_table = 'horario_lab'
 
-class permisos(models.Model):
-    id_permisos = models.AutoField(primary_key=True)
-    crear_usuario = models.CharField(max_length = 2, blank=True, null=True)
-    modificar_usuario = models.CharField(max_length = 2, blank=True, null=True)
-    eliminar_usuario = models.CharField(max_length = 2, blank=True, null=True)
-    id_admin = models.ForeignKey(admin, models.DO_NOTHING, db_column='id_admin', blank=True, null=True)
+class Permisos(models.Model):
+    id_permisos = models.BigIntegerField(primary_key=True)
+    crear_usuario = models.CharField(max_length=2)
+    modificar_usuario = models.CharField(max_length=2)
+    eliminar_usuario = models.CharField(max_length=2)
+    id_admin = models.ForeignKey(Administrador, models.DO_NOTHING, db_column='id_admin')
+
     class Meta:
         managed = False
         db_table = 'permisos'
 
-class resumen(models.Model):
-    id_resumen = models.AutoField(primary_key=True)
-    tasacion_id_tasacion = models.IntegerField(("11"))
-    tasador_id_tasador = models.IntegerField(("11"))
-    fecha = models.DateField((""), auto_now=False, auto_now_add=False)
-    id_admin = models.ForeignKey(admin, models.DO_NOTHING, db_column='id_admin', blank=True, null=True)
+
+class Region(models.Model):
+    numero_region = models.BigIntegerField(primary_key=True)
+    nombre_region = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'region'
+
+
+class Resumen(models.Model):
+    id_resumen = models.BigIntegerField(primary_key=True)
+    tasacion_id_tasacion = models.ForeignKey('Tasacion', models.DO_NOTHING, db_column='tasacion_id_tasacion')
+    tasador_id_tasador = models.ForeignKey('Tasador', models.DO_NOTHING, db_column='tasador_id_tasador')
+    fecha = models.DateField()
+    id_admin = models.ForeignKey(Administrador, models.DO_NOTHING, db_column='id_admin')
+
     class Meta:
         managed = False
         db_table = 'resumen'
 
-class tasacion(models.Model):
+
+class Tasacion(models.Model):
     id_tasacion = models.AutoField(primary_key=True)
-    rol_propiedad = models.CharField(max_length = 50, blank=True, null=True)
-    nombre_propietario = models.CharField(max_length = 50, blank=True, null=True)
-    rut_propietario = models.CharField(max_length = 50, blank=True, null=True)
-    documentacion = models.CharField(max_length = 50, blank=True, null=True)
-    inf_modelo = models.CharField(max_length = 50, blank=True, null=True)
-    tasador_id_tasador = models.IntegerField(("11"), blank=True, null=True)
-    ciudad_nombre_ciudad = models.CharField(max_length = 50, blank=True, null=True)
-    fecha = models.DateField((""), auto_now=False, auto_now_add=False)
+    rol_propiedad = models.CharField(max_length=50)
+    nombre_propietario = models.CharField(max_length=50)
+    rut_propietario = models.CharField(max_length=10)
+    documentacion = models.BinaryField()
+    inf_modelo = models.BinaryField()
+    tasador_id_tasador = models.ForeignKey('Tasador', models.DO_NOTHING, db_column='tasador_id_tasador')
+    ciudad_nombre_ciudad = models.ForeignKey(Ciudad, models.DO_NOTHING, db_column='ciudad_nombre_ciudad')
+    fecha = models.DateField()
+
     class Meta:
         managed = False
         db_table = 'tasacion'
 
-class tasador(models.Model):
+
+class Tasador(models.Model):
     id_tasador = models.AutoField(primary_key=True)
-    nombre_tasador = models.CharField(max_length = 50, blank=True, null=True)
-    rut_tasador = models.CharField(max_length = 50, unique=True, blank=True, null=True)
-    telefono_tasador = models.IntegerField(("11"), blank=True, null=True)
-    correo_tasador = models.CharField(max_length = 150, blank=True, null=True)
-    ciudad_nombre_ciudad = models.CharField(max_length = 50, blank=True, null=True)
-    usuario_id_usuario = models.IntegerField(("11"), blank=True, null=True)
-    horario_lab_fecha = models.DateField((""), auto_now=False, auto_now_add=False)
-    id_usuario = models.ForeignKey(usuario, models.DO_NOTHING, db_column='id_usuario', blank=True, null=True)
+    nombre_tasador = models.CharField(max_length=50)
+    rut_tasador = models.CharField(max_length=10)
+    telefono_tasador = models.BigIntegerField()
+    correo_tasador = models.CharField(max_length=150)
+    ciudad_nombre_ciudad = models.ForeignKey(Ciudad, models.DO_NOTHING, db_column='ciudad_nombre_ciudad')
+    usuario_id_usuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_id_usuario')
+    horario_lab_fecha = models.DateField()
+    id_usuario = models.BigIntegerField()
+
     class Meta:
         managed = False
         db_table = 'tasador'
+
+
+class Usuario(models.Model):
+    id_usuario = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=150)
+    password = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'usuario'

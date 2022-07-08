@@ -270,7 +270,7 @@
                       <div class="form-outline mb-4">
                         <label class="form-label" for="telefono">Contacto</label>
                         <input type="text" name="telefono" id="telefono" class="form-control" 
-                        placeholder="Ingrese telefono" required autocomplete="telefono"/>
+                        placeholder="Ingrese telefono" required autocomplete="telefono" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"/>
                       </div>
     
                       <div class="text-center pt-1 mb-3 pb-1">
