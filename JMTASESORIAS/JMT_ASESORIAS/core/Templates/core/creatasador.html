@@ -205,80 +205,59 @@
                       <h4 class="mt-1 mb-5 pb-1">Somos JMT Asesorías!</h4>
                     </div>
     
-                    <form action="" method="">
+                    <form action="" method="POST">
+                        {% csrf_token %}
                       <p>Ingrese los datos del nuevo tasador</p>
                       <br>
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="email">Correo electronico</label>
+                        <label class="form-label" for="">Correo electronico</label>
                         <input type="email" name="email" id="email" class="form-control"
                           placeholder="Ingrese su email" required autocomplete="email"/>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="password">Contraseña</label>
+                        <label class="form-label" for="">Contraseña</label>
                         <input type="password" name="password" id="password" class="form-control" 
                         placeholder="Ingrese su contraseña" required autocomplete="password"/>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="rep_password">Repita su contraseña</label>
-                        <input type="password" name="rep_password" id="rep_password" class="form-control" 
-                        placeholder="Repita contraseña" required autocomplete="rep_password"/>
+                        <label class="form-label" for="">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control" 
+                        placeholder="Ingrese Nombre" required autocomplete="nombres"/>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="nombres">Nombres</label>
-                        <input type="text" name="nombres" id="nombres" class="form-control" 
-                        placeholder="Ingrese Nombres" required autocomplete="nombres"/>
+                        <label class="form-label" for="">Primer apellido</label>
+                        <input type="text" name="apellido" id="apellido" class="form-control" 
+                        placeholder="Ingrese primer apellido" required autocomplete="apellido"/>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="primerapellido">Primer apellido</label>
-                        <input type="text" name="primerapellido" id="primerapellido" class="form-control" 
-                        placeholder="Ingrese primer apellido" required autocomplete="primerapellido"/>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="segundoapellido">Segundo apellido</label>
-                        <input type="text" name="segundoapellido" id="segundoapellido" class="form-control" 
-                        placeholder="Ingrese segundo apellido" required autocomplete="segundoapellido"/>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="regiones">Región a trabajar</label>
-                        <select type="select" class="form-control text-muted" name="regiones" id="regiones" required autocomplete="regiones">
+                        <label class="form-label" for="">Región a trabajar</label>
+                        <select type="select" class="form-control text-muted" name="region" id="region" required autocomplete="region">
                             <option class="text-muted">Seleccione una region</option>
-                            <option value="Tarapaca">Tarapaca</option>
-                            <option value="Antofagasta">Antofagasta</option>
-                            <option value="Atacama">Atacama</option>
-                            <option value="Coquimbo">Coquimbo</option>
-                            <option value="Valparaiso">Valparaiso</option>
-                            <option value="O'Higgins">O'Higgins</option>
-                            <option value="Maule">Maule</option>
-                            <option value="Bio Bio">Bio Bio</option>
-                            <option value="Araucania">Araucania</option>
-                            <option value="Los Lagos">Los Lagos</option>
-                            <option value="Aysen">Aysen</option>
-                            <option value="Magallanes y Antártica Chilena">Magallanes y Antártica Chilena</option>
-                            <option value="Metropolitana">Metropolitana</option>
-                            <option value="Los Rios">Los Rios</option>
-                            <option value="Arica-Parinacota">Arica-Parinacota</option>
-                            <option value="Ñuble">Ñuble</option>
+                            {% for c in regiones %}
+                                <option value="{{ c.0 }}">{{ c.1 }}</option>
+                            {% endfor %}
                           </select>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="telefono">Contacto</label>
+                        <label class="form-label" for="">Contacto</label>
                         <input type="text" name="telefono" id="telefono" class="form-control" 
                         placeholder="Ingrese telefono" required autocomplete="telefono" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"/>
                       </div>
     
                       <div class="text-center pt-1 mb-3 pb-1">
-                        <button id="guardar_tasador" onclick="comprobarClaves()" type="submit" 
+                        <button value="Guardar" type="submit" 
                         class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/admintasador/">CONFIRMAR</button>
                       </div>
 
-                    </form>                  
+                    </form>   
+                    
+                    {{mensaje}}
+                    
                                       <script>
                                         //Funcion comprobar claves
 
@@ -293,28 +272,16 @@
                                             }
                                         }
 
-                                        //Funcion boton nuevo tasador
-                                        function crear_tasador(){
-                                            var email = document.getElementById("email").value;
-                                            var password = document.getElementById("password").value;
-                                            var rep_password = document.getElementById("rep_password").value;
-                                            var nombres = document.getElementById("nombres").value;
-                                            var primerapellido = document.getElementById("primerapellido").value;
-                                            var segundoapellido = document.getElementById("segundoapellido").value;
-                                            var regiones = document.getElementById("regiones").value;
-                                            var telefono = document.getElementById("telefono").value;
-                
-                                        }
-
+                                       
                                         //para visualizar la info al momento de inspeccionar la pagina.
-                                        console.log(email);
-                                        console.log(password);
-                                        console.log(rep_password);
-                                        console.log(nombres);
-                                        console.log(primerapellido);
-                                        console.log(segundoapellido);
-                                        console.log(regiones);
-                                        console.log(telefono);
+                                        //console.log(email);
+                                        //console.log(password);
+                                        //console.log(rep_password);
+                                        //console.log(nombres);
+                                        //console.log(primerapellido);
+                                        //console.log(segundoapellido);
+                                        //console.log(regiones);
+                                        //console.log(telefono);
 
                                       </script>
                                       <!--Fin funcion-->

@@ -1,0 +1,34 @@
+create or replace procedure sp_listar_regioness(regiones out SYS_REFCURSOR)
+is
+
+begin
+
+    open regiones for select * from region;
+
+
+end;
+
+create or replace procedure sp_agregar_tasador(
+    v_correo varchar2,
+    v_contrasena varchar2,
+    v_nombre varchar2,
+    v_apellido varchar2,
+    v_region_id number,
+    v_telefono number,
+    v_salida out number
+)
+is
+
+begin
+
+    insert into usuario(correo, contrasena, nombre, apellido, region_id, telefono)
+    values(v_correo, v_contrasena, v_nombre, v_apellido, v_region_id, v_telefono);
+    commit;
+    v_salida:=1;
+
+    exception
+
+    when others then
+        v_salida:=0;
+
+end;

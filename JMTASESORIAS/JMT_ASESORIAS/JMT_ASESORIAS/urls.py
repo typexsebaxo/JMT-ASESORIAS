@@ -29,6 +29,7 @@ urlpatterns = [
     path('menutasador/',views.Menutasador, name='menutasador'),
     path('misproyectos/',views.Misproyectos, name='misproyectos'),
     path('admin/', admin.site.urls),
+    
 ]
 
 if settings.DEBUG:

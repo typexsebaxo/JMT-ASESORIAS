@@ -1,8 +1,10 @@
+import re
 from django.shortcuts import render
 from django.http import Http404
 from django.utils import html
 from django.http import HttpResponse
-
+from django.db import connection
+import cx_Oracle
 
 # Create your views here.
 
@@ -25,10 +27,46 @@ def Notificacionesadmin(request):
     return render(request,"core/notificacionesadmin.html")
 
 def Creatasador(request):
-    return render(request,"core/creatasador.html")
+    data = {
+        'regiones':Listar_regiones(),
+    }
+    
+    if request.method == 'POST':
+        correo = request.POST.get('email')
+        contrasena = request.POST.get('password')
+        nombre = request.POST.get('nombre')
+        apellido = request.POST.get('apellido')
+        region_id = request.POST.get('region')
+        telefono = request.POST.get('telefono')
+        salida = agregar_tasador(correo, contrasena, nombre, apellido, region_id, telefono)
+        if salida == 1:
+            data['mensaje'] = 'agregado correctamente'
+        else:
+            data['mensaje'] = 'no se ha podido guardar'
+    
+    return render(request,"core/creatasador.html", data)
 
 def Menutasador(request):
     return render(request,"core/menutasador.html")
     
 def Misproyectos(request):
     return render(request,"core/misproyectos.html")
+
+def Listar_regiones():
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    out_cur = django_cursor.connection.cursor()
+    
+    cursor.callproc("SP_LISTAR_REGIONESS", [out_cur])
+    
+    lista = [] 
+    for fila in out_cur:
+        lista.append(fila)
+    return lista    
+
+def agregar_tasador(correo, contrasena, nombre, apellido, region_id, telefono):
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    salida = cursor.var(cx_Oracle.NUMBER)
+    cursor.callproc('SP_AGREGAR_TASADOR', [correo, contrasena, nombre, apellido, region_id, telefono, salida])
+    return salida.getvalue()

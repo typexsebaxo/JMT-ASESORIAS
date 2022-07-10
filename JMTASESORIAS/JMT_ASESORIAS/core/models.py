@@ -9,101 +9,86 @@ from django.db import models
 
 
 
-class Administrador(models.Model):
-    id_admin = models.AutoField(primary_key=True)
-    nombre_admin = models.CharField(max_length=50)
-    rut_admin = models.CharField(max_length=10)
-    correo_admin = models.CharField(max_length=150)
-    telefono_admin = models.BigIntegerField()
-    ciudad_nombre_ciudad = models.ForeignKey('Ciudad', models.DO_NOTHING, db_column='ciudad_nombre_ciudad')
-    usuario_id_usuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_id_usuario')
-    id_usuario = models.BigIntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'administrador'
-
 
 class Ciudad(models.Model):
-    nombre_ciudad = models.CharField(primary_key=True, max_length=50)
-    comuna_ciudad = models.CharField(max_length=50)
-    region_numero_region = models.ForeignKey('Region', models.DO_NOTHING, db_column='region_numero_region')
+    id = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=50)
+    region = models.ForeignKey('Region', models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'ciudad'
 
+    def __str__(self):
+        return self.nombre
 
-class Permisos(models.Model):
-    id_permisos = models.BigIntegerField(primary_key=True)
-    crear_usuario = models.CharField(max_length=2)
-    modificar_usuario = models.CharField(max_length=2)
-    eliminar_usuario = models.CharField(max_length=2)
-    id_admin = models.ForeignKey(Administrador, models.DO_NOTHING, db_column='id_admin')
+
+class Permiso(models.Model):
+    id = models.AutoField(primary_key=True)
+    rol = models.CharField(max_length=50)
 
     class Meta:
         managed = False
-        db_table = 'permisos'
+        db_table = 'permiso'
+        
+    def __str__(self):
+        return self.rol
 
 
 class Region(models.Model):
-    numero_region = models.BigIntegerField(primary_key=True)
-    nombre_region = models.CharField(max_length=50)
+    id = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=50)
 
     class Meta:
         managed = False
         db_table = 'region'
-
-
-class Resumen(models.Model):
-    id_resumen = models.BigIntegerField(primary_key=True)
-    tasacion_id_tasacion = models.ForeignKey('Tasacion', models.DO_NOTHING, db_column='tasacion_id_tasacion')
-    tasador_id_tasador = models.ForeignKey('Tasador', models.DO_NOTHING, db_column='tasador_id_tasador')
-    fecha = models.DateField()
-    id_admin = models.ForeignKey(Administrador, models.DO_NOTHING, db_column='id_admin')
-
-    class Meta:
-        managed = False
-        db_table = 'resumen'
+        
+    def __str__(self):
+        return self.nombre
 
 
 class Tasacion(models.Model):
-    id_tasacion = models.AutoField(primary_key=True)
-    rol_propiedad = models.CharField(max_length=50)
+    id = models.AutoField(primary_key=True)
+    propiedad = models.CharField(max_length=50)
     nombre_propietario = models.CharField(max_length=50)
-    rut_propietario = models.CharField(max_length=10)
+    rut_propietario = models.CharField(max_length=50)
     documentacion = models.BinaryField()
-    inf_modelo = models.BinaryField()
-    tasador_id_tasador = models.ForeignKey('Tasador', models.DO_NOTHING, db_column='tasador_id_tasador')
-    ciudad_nombre_ciudad = models.ForeignKey(Ciudad, models.DO_NOTHING, db_column='ciudad_nombre_ciudad')
     fecha = models.DateField()
+    tasador = models.ForeignKey('Tasador', models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'tasacion'
+        
+    def __str__(self):
+        return self.propiedad
 
 
 class Tasador(models.Model):
-    id_tasador = models.AutoField(primary_key=True)
-    nombre_tasador = models.CharField(max_length=50)
-    rut_tasador = models.CharField(max_length=10)
-    telefono_tasador = models.BigIntegerField()
-    correo_tasador = models.CharField(max_length=150)
-    ciudad_nombre_ciudad = models.ForeignKey(Ciudad, models.DO_NOTHING, db_column='ciudad_nombre_ciudad')
-    usuario_id_usuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_id_usuario')
-    horario_lab_fecha = models.DateField()
-    id_usuario = models.BigIntegerField()
+    id = models.AutoField(primary_key=True)
+    usuario = models.ForeignKey('Usuario', models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'tasador'
+        
+    def __str__(self):
+        return self.usuario
 
 
 class Usuario(models.Model):
-    id_usuario = models.AutoField(primary_key=True)
-    email = models.CharField(max_length=150)
-    password = models.CharField(max_length=50)
+    id = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    contrasena = models.CharField(max_length=25)
+    correo = models.CharField(max_length=30)
+    telefono = models.FloatField()
+    permiso = models.ForeignKey(Permiso, models.DO_NOTHING)
+    region = models.ForeignKey(Region, models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'usuario'
+        
+    def __str__(self):
+        return self.nombre
