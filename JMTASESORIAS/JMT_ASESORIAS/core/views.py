@@ -1,4 +1,3 @@
-import re
 from django.shortcuts import render
 from django.http import Http404
 from django.utils import html
@@ -12,10 +11,19 @@ def InicioSesion(request):
  return render(request,"core/InicioSesion.html")
 
 def Menuadmin(request):
- return render(request,"core/menuadmin.html")
+    data = {
+        'usuarios':listado_usuario()
+    }
+    return render(request,"core/menuadmin.html", data)
 
 def Admintasador(request):
-    return render(request,"core/admintasador.html")
+    #print(listado_usuario())    #ESTO ES PARA MOSTRAR EN EL TERMINAL LAS FILAS DE LA TABLA USUARIO
+    
+    data = {
+        'usuarios':listado_usuario()
+    }
+    
+    return render(request,"core/admintasador.html", data)
 
 def Menutasacionadmin(request):
     return render(request,"core/menutasacionadmin.html")
@@ -30,6 +38,7 @@ def Creatasador(request):
     data = {
         'regiones':Listar_regiones(),
     }
+    
     
     if request.method == 'POST':
         correo = request.POST.get('email')
@@ -52,6 +61,19 @@ def Menutasador(request):
 def Misproyectos(request):
     return render(request,"core/misproyectos.html")
 
+
+def listado_usuario():
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    out_cur = django_cursor.connection.cursor()
+    
+    cursor.callproc("SP_LISTAR_USUARIO", [out_cur])
+    
+    lista = []
+    for fila in out_cur:
+        lista.append(fila)
+    return lista 
+
 def Listar_regiones():
     django_cursor = connection.cursor()
     cursor = django_cursor.connection.cursor()
@@ -68,5 +90,8 @@ def agregar_tasador(correo, contrasena, nombre, apellido, region_id, telefono):
     django_cursor = connection.cursor()
     cursor = django_cursor.connection.cursor()
     salida = cursor.var(cx_Oracle.NUMBER)
-    cursor.callproc('SP_AGREGAR_TASADOR', [correo, contrasena, nombre, apellido, region_id, telefono, salida])
+    cursor.callproc('SP_AGREGAR_TASADOR',[correo, contrasena, nombre, apellido, region_id, telefono, salida])
     return salida.getvalue()
+
+def Agregar_usuario(request):
+    return render(request, "core/creartasador.html")

@@ -59,29 +59,31 @@
                           <div class="text-center">
                             <img src="{% static 'core/img/logo.png' %}"
                               style="width: 155px;" alt="logo">
-                            <h4 class="mt-1 mb-5 pb-1">Somos JMT Asesorías!</h4>
-                            <span class="d-block text-muted">Ingrese sus datos</span>
-                          </div>
-                          <br >
-                          <form>
-          
-                            <div class="form-outline mb-4">
-                              <input type="email" id="form2Example11" class="form-control"
-                                placeholder="Phone number or email address" />
-                              <label class="form-label" for="form2Example11">Usuario</label>
+                              <h4 class="mt-1 mb-5 pb-1">Somos JMT Asesorías!</h4>
+                              <span class="d-block text-muted">Ingrese sus datos</span>
                             </div>
-          
-                            <div class="form-outline mb-4">
-                              <input type="password" id="form2Example22" class="form-control" />
-                              <label class="form-label" for="form2Example22">Contraseña</label>
-                            </div>
-          
-                            <div class="text-center pt-1 mb-5 pb-1">
-                              <a class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/menuadmin/">Ingresar</a>
-                              <a class="text-muted" href="#!">Olvidaste tu contraseña?</a>
-                            </div>
-          
-                          </form>
+                            <br >
+                            <form method="POST" action="" class="form-group form-group-feedback form-group-feedback-left">
+                              {% csrf_token %}
+                                <div class="container">
+                                <div class="form-outline mb-4">
+                                  <label for="">Email</label>
+                                  <input name="email" type="email" id="email" class="form-control"
+                                    placeholder="Ingrese su correo" required autocomplete="email" >
+                                </div>
+              
+                                <div class="form-outline mb-4">
+                                  <label for="">Contraseña</label>
+                                  <input name="password" type="password" id="password" class="form-control" 
+                                  placeholder="Ingrese su contraseña" required autocomplete="password">
+                                </div>
+                                <div class="text-center pt-1 mb-5 pb-1">
+                                  <button type="submit" value="Ingresar" class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="menuadmin/">Ingresar</button>
+                                  <br>
+                                  <span class="password">Olvidaste tu <a href="#" style="color: blue;">contraseña?</a></span>
+                                </div>
+                              </div>
+                            </form>
                       </div>
                       </div>
                       <div class="col-lg-6 d-flex align-items-center gradient-custom-2">

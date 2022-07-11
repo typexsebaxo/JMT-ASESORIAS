@@ -231,11 +231,13 @@
                         </p>
                         <hr class="horizontal gray-light my-4">
                         <ul class="list-group">
-                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre completo:</strong> &nbsp; Giovanny Otárola.</li>
-                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Numero:</strong> &nbsp; (56) 967 845 369</li>
-                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; giotarola@mail.com</li>
-                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Region:</strong> &nbsp; Metropolitana</li>
+                          {%for p in usuarios %}
+                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre:</strong> &nbsp; {{ p.1 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Apellido:</strong> &nbsp; {{ p.2 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Numero:</strong> &nbsp; {{ p.5 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{ p.4 | upper }}</li>
                           <li class="list-group-item border-0 ps-0 pb-0">
+                          {%endfor%}    
                             <strong class="text-dark text-sm">Social:</strong> &nbsp;
                             <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="https://www.facebook.com/">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>

@@ -217,6 +217,20 @@
                           <img src="{% static 'core/img/avatar1.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
                         </a>
                       </div>
+                      
+                      <table>
+                        <tr>
+                          <th>Region</th>
+                          <th>Correo</th>
+                        </tr>
+                        {%for p in usuarios %}
+                          <tr>
+                            <td>{{p.1}}</td>
+                            <td>{{p.4}}</td>
+                          </tr>
+                        {%endfor%}  
+                      </table>
+
                       <div class="card-body p-3">
                         <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
                           <h5 class=" text-center">

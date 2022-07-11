@@ -19,6 +19,7 @@ from core import views
 from django.conf import settings
 
 urlpatterns = [
+    path('admin/', admin.site.urls), 
     path('inicioSesion/',views.InicioSesion, name='InicioSesion'),
     path('menuadmin/',views.Menuadmin, name='menuadmin'),
     path('admintasador/',views.Admintasador, name='admintasador'),
@@ -28,8 +29,7 @@ urlpatterns = [
     path('creatasador/',views.Creatasador, name='creatasador'),
     path('menutasador/',views.Menutasador, name='menutasador'),
     path('misproyectos/',views.Misproyectos, name='misproyectos'),
-    path('admin/', admin.site.urls),
-    
+    path('agregar-tasador/', views.Agregar_usuario, name='agregar_usuario'),
 ]
 
 if settings.DEBUG:

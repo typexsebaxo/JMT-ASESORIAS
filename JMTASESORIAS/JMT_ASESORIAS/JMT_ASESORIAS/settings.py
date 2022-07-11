@@ -28,9 +28,12 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'colorfield',
 ]
+
+X_FRAME_OPTIONS ='SAMEORIGIN' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -119,6 +125,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+#LOGIN_REDIRECT_URL = reverse_lazy('menuadmin')
+#LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

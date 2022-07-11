@@ -206,59 +206,19 @@
                     </div>
     
                     <form action="" method="POST">
+
                         {% csrf_token %}
-                      <p>Ingrese los datos del nuevo tasador</p>
-                      <br>
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="">Correo electronico</label>
-                        <input type="email" name="email" id="email" class="form-control"
-                          placeholder="Ingrese su email" required autocomplete="email"/>
-                      </div>
+                        {{form}}
+                        
+                        <div class="d-flex justify-content-center">
 
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="">Contraseña</label>
-                        <input type="password" name="password" id="password" class="form-control" 
-                        placeholder="Ingrese su contraseña" required autocomplete="password"/>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" 
-                        placeholder="Ingrese Nombre" required autocomplete="nombres"/>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="">Primer apellido</label>
-                        <input type="text" name="apellido" id="apellido" class="form-control" 
-                        placeholder="Ingrese primer apellido" required autocomplete="apellido"/>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="">Región a trabajar</label>
-                        <select type="select" class="form-control text-muted" name="region" id="region" required autocomplete="region">
-                            <option class="text-muted">Seleccione una region</option>
-                            {% for c in regiones %}
-                                <option value="{{ c.0 }}">{{ c.1 }}</option>
-                            {% endfor %}
-                          </select>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="">Contacto</label>
-                        <input type="text" name="telefono" id="telefono" class="form-control" 
-                        placeholder="Ingrese telefono" required autocomplete="telefono" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"/>
-                      </div>
-    
-                      <div class="text-center pt-1 mb-3 pb-1">
-                        <button value="Guardar" type="submit" 
-                        class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/admintasador/">CONFIRMAR</button>
-                      </div>
-
+                        <input type="submit" value="Guardar" class="btn btn-primary">
+                        </div>
                     </form>   
 
                     
                     
-                    {{mensaje}}
+                    
                     
                                       <script>
                                         //Funcion comprobar claves

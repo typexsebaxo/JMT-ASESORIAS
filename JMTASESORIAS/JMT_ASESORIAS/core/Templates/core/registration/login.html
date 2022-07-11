@@ -64,9 +64,26 @@
                             </div>
                             <br >
                             <form method="POST" action="" class="form-group form-group-feedback form-group-feedback-left">
-                              {% csrf_token %}
-                              {{ form}}
-                            </form>
+                                {% csrf_token %}
+                                  <div class="container">
+                                  <div class="form-outline mb-4">
+                                    <label for="">Email</label>
+                                    <input name="email" type="email" id="email" class="form-control"
+                                      placeholder="Ingrese su correo" required autocomplete="email" >
+                                  </div>
+                
+                                  <div class="form-outline mb-4">
+                                    <label for="">Contraseña</label>
+                                    <input name="password" type="password" id="password" class="form-control" 
+                                    placeholder="Ingrese su contraseña" required autocomplete="password">
+                                  </div>
+                                  <div class="text-center pt-1 mb-5 pb-1">
+                                    <button type="submit" value="Ingresar" class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="menuadmin/">Ingresar</button>
+                                    <br>
+                                    <span class="password">Olvidaste tu <a href="#" style="color: blue;">contraseña?</a></span>
+                                  </div>
+                                </div>
+                              </form>
                       </div>
                       </div>
                       <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
