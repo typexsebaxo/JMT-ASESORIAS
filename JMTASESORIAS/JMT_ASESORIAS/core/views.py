@@ -4,6 +4,7 @@ from django.utils import html
 from django.http import HttpResponse
 from django.db import connection
 import cx_Oracle
+from .forms import UsuarioForm
 
 # Create your views here.
 
@@ -94,4 +95,17 @@ def agregar_tasador(correo, contrasena, nombre, apellido, region_id, telefono):
     return salida.getvalue()
 
 def Agregar_usuario(request):
-    return render(request, "core/creartasador.html")
+    
+    data = {
+        'form':UsuarioForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = UsuarioForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]= "Guardado correctamente"
+        else:
+            data["form"] = formulario
+    
+    return render(request, "core/usuario/agregar.html", data)

@@ -204,7 +204,8 @@
                         style="width: 120px;" alt="logo">
                       <h4 class="mt-1 mb-5 pb-1">Somos JMT Asesorías!</h4>
                     </div>
-    
+                    <p>Ingrese los datos del nuevo tasador</p>
+                      <br>
                     <form action="" method="POST">
 
                         {% csrf_token %}
@@ -212,11 +213,11 @@
                         
                         <div class="d-flex justify-content-center">
 
-                        <input type="submit" value="Guardar" class="btn btn-primary">
+                        <input type="submit" value="Confirmar" class="btn btn-primary">
                         </div>
                     </form>   
 
-                    
+                    {{mensaje}}
                     
                     
                     
