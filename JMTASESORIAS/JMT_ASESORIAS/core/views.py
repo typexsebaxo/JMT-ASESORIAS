@@ -35,11 +35,29 @@ def Graficostasacion(request):
 def Notificacionesadmin(request):
     return render(request,"core/notificacionesadmin.html")
 
+def Newtasacion(request):
+    return render(request,"core/newtasacion.html")
+
+def Agregar_usuario(request):
+    
+    data = {
+        'form':UsuarioForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = UsuarioForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]= "Guardado correctamente"
+        else:
+            data["form"] = formulario
+    
+    return render(request, "core/usuario/agregar.html", data)
+
 def Creatasador(request):
     data = {
         'regiones':Listar_regiones(),
         'permisos':Listar_permisos(),
-        'form':UsuarioForm(),
     }
     
     
@@ -122,21 +140,7 @@ def agregar_tasador(nombre, apellido, telefono, correo, contrasena, permiso_rol,
     cursor.callproc('SP_AGREGAR_TASADOR',[nombre, apellido, telefono, correo, contrasena, permiso_rol, region_nombre, salida])
     return salida.getvalue()
 
-def Agregar_usuario(request):
-    
-    data = {
-        'form':UsuarioForm()
-    }
-    
-    if request.method == 'POST':
-        formulario = UsuarioForm(data=request.POST, files=request.FILES)
-        if formulario.is_valid():
-            formulario.save()
-            data["mensaje"]= "Guardado correctamente"
-        else:
-            data["form"] = formulario
-    
-    return render(request, "core/usuario/agregar.html", data)
+
 
 #def loginAction(request):
     #print "Its workjing"
