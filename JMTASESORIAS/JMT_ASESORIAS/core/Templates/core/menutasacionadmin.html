@@ -233,8 +233,23 @@
                     <div class="card my-4">                    
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Tasaciones </h6>
-                                <a type="button" style="right" class="text-white" href="/agregar-tasador/"><strong>Nueva Tasacion!</strong></a>
+                               
+                                <div class="row gx-4 mb-2">
+                                    <div class="col-auto my-auto">
+                                        <div class="h-100">
+                                            <h6 class="mb-2"><strong class="text-white">Tasaciones</strong></h6>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-2 col-md-6 my-sm-auto ms-sm-auto me-sm-1 mx-auto mt-0">
+                                        <div class="nav-wrapper position-relative end-3">
+                                            <div class="text-center pt-2 pb-0 ">
+                                                <p class="btn btn-primary fa-lg gradient-custom-2 text-white bg-rosee" href="/agregar-tasador/">Nuevo tasador!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
@@ -248,147 +263,18 @@
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ultima actualizacion</th>
                                       </tr>
                                     </thead>
-                                    <tbody>
+                                    <table>
                                       <tr>
-                                        <td>
-                                          <div class="d-flex px-2 py-1">
-                                            <div>
-                                              <img src="{% static 'core/img/casa1.jpg' %}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                              <h6 class="mb-0 text-sm">Casa Z</h6>
-                                              <p class="text-xs text-secondary mb-0">Barrio Las Flores</p>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p class="text-xs font-weight-bold mb-0">Paulo</p>
-                                          <p class="text-xs text-secondary mb-0">Rojas</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <p class="text-xs text-secondary mb-0">Gonzalo Cáceres Dancuart</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                          <span class="text-secondary text-xs font-weight-bold">23/03/22</span>
-                                        </td>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Region</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Correo</th>
                                       </tr>
-                                      <tr>
-                                        <td>
-                                          <div class="d-flex px-2 py-1">
-                                            <div>
-                                              <img src="{% static 'core/img/casa2.jpg' %}" class="avatar avatar-sm me-3 border-radius-lg" alt="user2">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                              <h6 class="mb-0 text-sm">Casa PA</h6>
-                                              <p class="text-xs text-secondary mb-0">Barrio Suecia</p>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p class="text-xs font-weight-bold mb-0">Monica</p>
-                                          <p class="text-xs text-secondary mb-0">Guirado</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <p class="text-xs text-secondary mb-0">Will Scott</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                          <span class="text-secondary text-xs font-weight-bold">11/01/22</span>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <div class="d-flex px-2 py-1">
-                                            <div>
-                                              <img src="{% static 'core/img/casa3.jpg' %}" class="avatar avatar-sm me-3 border-radius-lg" alt="user3">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                              <h6 class="mb-0 text-sm">Casa ARN 01</h6>
-                                              <p class="text-xs text-secondary mb-0">Barrio Plaza Sucre</p>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p class="text-xs font-weight-bold mb-0">Matias</p>
-                                          <p class="text-xs text-secondary mb-0">Carmona</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <p class="text-xs text-secondary mb-0">Ivan de Sousa</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                          <span class="text-secondary text-xs font-weight-bold">29/05/22</span>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <div class="d-flex px-2 py-1">
-                                            <div>
-                                              <img src="{% static 'core/img/casa4.jpg' %}" class="avatar avatar-sm me-3 border-radius-lg" alt="user4">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                              <h6 class="mb-0 text-sm">House in Dinamarca</h6>
-                                              <p class="text-xs text-secondary mb-0">Barrio Dinamarca</p>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p class="text-xs font-weight-bold mb-0">Josue</p>
-                                          <p class="text-xs text-secondary mb-0">Figueroa</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <p class="text-xs text-secondary mb-0">Zevallos Celle</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                          <span class="text-secondary text-xs font-weight-bold">10/3/22</span>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <div class="d-flex px-2 py-1">
-                                            <div>
-                                              <img src="{% static 'core/img/casa5.jpg' %}" class="avatar avatar-sm me-3 border-radius-lg" alt="user5">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                              <h6 class="mb-0 text-sm">A-cero</h6>
-                                              <p class="text-xs text-secondary mb-0">Barrio El Golf</p>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p class="text-xs font-weight-bold mb-0">Marcela</p>
-                                          <p class="text-xs text-secondary mb-0">Lujan</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                            <p class="text-xs text-secondary mb-0">Anselmo Ubeda</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                          <span class="text-secondary text-xs font-weight-bold">024/12/21</span>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <div class="d-flex px-2 py-1">
-                                            <div>
-                                              <img src="{% static 'core/img/casa6.jpg' %}" class="avatar avatar-sm me-3 border-radius-lg" alt="user6">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                              <h6 class="mb-0 text-sm">Casa El Pillán</h6>
-                                              <p class="text-xs text-secondary mb-0">Barrio Los Frailes</p>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>
-                                          <p class="text-xs font-weight-bold mb-0">Felipe</p>
-                                          <p class="text-xs text-secondary mb-0">Camiroaga</p>
-                                        </td>
-                                        <td class="align-middle text-center text-sm">
-                                          <p class="text-xs text-secondary mb-0">Maria Angela Enriquez</p>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                          <span class="text-secondary text-xs font-weight-bold">01/06/22</span>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                </table>
+                                      {%for p in usuarios %}
+                                        <tr>
+                                          <td>{{p.1}}</td>
+                                          <td>{{p.4}}</td>
+                                        </tr>
+                                      {%endfor%}  
+                                    </table>
                             </div>                         
                         </div>
                     </div>
