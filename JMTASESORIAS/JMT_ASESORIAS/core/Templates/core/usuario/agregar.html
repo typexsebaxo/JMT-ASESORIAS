@@ -9,6 +9,7 @@
 
     <title>{% block title %}{% endblock %} JMT asesorías</title>
     {% load static %}
+    {% load crispy_forms_tags %}
 
     <link rel="icon" href="{% static 'core/img/logo.png' %}">
 
@@ -209,7 +210,7 @@
                     <form action="" method="POST">
 
                         {% csrf_token %}
-                        {{form}}
+                        {{ form | crispy }}
                         
                         <div class="d-flex justify-content-center">
 
@@ -222,20 +223,7 @@
                     
                     
                                       <script>
-                                        //Funcion comprobar claves
-
-                                        function comprobarClaves() {
-                                            password = document.f1.clave1.value;
-                                            rep_password = document.f1.clave2.value;
-
-                                            if (password == rep_password) {
-                                                alert("Las dos claves son iguales")
-                                            }else{
-                                                alert("Las dos claves son distintas")
-                                            }
-                                        }
-
-                                       
+                                        
                                         //para visualizar la info al momento de inspeccionar la pagina.
                                         //console.log(email);
                                         //console.log(password);
