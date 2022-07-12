@@ -39,3 +39,8 @@ begin
     open usuario for select * from usuario;
 end;
 
+create or replace procedure sp_listar_tasacion(tasacion out SYS_REFCURSOR)
+is
+begin
+    open tasacion for select * from tasacion;
+end;

@@ -237,14 +237,14 @@
                                 <div class="row gx-4 mb-2">
                                     <div class="col-auto my-auto">
                                         <div class="h-100">
-                                            <h6 class="mb-2"><strong class="text-white">Tasaciones</strong></h6>
+                                            <h4 class="mb-2"><strong class="text-white">Tasaciones</strong></h4>
                                         </div>
                                     </div>
                                     
                                     <div class="col-lg-2 col-md-6 my-sm-auto ms-sm-auto me-sm-1 mx-auto mt-0">
                                         <div class="nav-wrapper position-relative end-3">
                                             <div class="text-center pt-2 pb-0 ">
-                                                <p class="btn btn-primary fa-lg gradient-custom-2 text-white bg-rosee" href="/agregar-tasador/">Nuevo tasador!</p>
+                                                <p class="btn btn-primary fa-lg gradient-custom-2 text-white bg-rosee" href="/agregar-tasador/"><strong>Nuevo tasador!</strong></p>
                                             </div>
                                         </div>
                                     </div>
@@ -254,24 +254,22 @@
                         </div>
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive p-0">
-                                <table class="table align-items-center mb-0">
-                                    <thead>
+                                
+                                    <table class="table align-items-center mb-0">
                                       <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Direccion</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tasador a cargo</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Clientes</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ultima actualizacion</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tasador</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Propietario</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rut propietario</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Documentacion</th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha de tasacion</th>
                                       </tr>
-                                    </thead>
-                                    <table>
-                                      <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Region</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Correo</th>
-                                      </tr>
-                                      {%for p in usuarios %}
+                                      {%for t in tasaciones %}
                                         <tr>
-                                          <td>{{p.1}}</td>
-                                          <td>{{p.4}}</td>
+                                          <td>{{t.4}}</td>
+                                          <td>{{t.1}}</td>
+                                          <td>{{t.0}}</td>
+                                          <td>{{t.3}}</td>
+                                          <td>{{t.2}}</td>
                                         </tr>
                                       {%endfor%}  
                                     </table>
