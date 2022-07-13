@@ -9,8 +9,8 @@ from django.contrib import messages
 
 # Create your views here.
 
-def InicioSesion(request):
- return render(request,"core/InicioSesion.html")
+def Login(request):
+ return render(request,"core/login.html")
 
 def Menuadmin(request):
     data = {
