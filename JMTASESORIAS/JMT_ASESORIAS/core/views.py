@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.db import connection
 import cx_Oracle
 from .forms import UsuarioForm, TasacionForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -48,6 +49,7 @@ def Newtasacion(request):
         formulario = TasacionForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
+            #messages.success(request, "Nueva tasacion ingresada")
             data["mensaje"]= "Guardado correctamente"
         else:
             data["form"] = formulario

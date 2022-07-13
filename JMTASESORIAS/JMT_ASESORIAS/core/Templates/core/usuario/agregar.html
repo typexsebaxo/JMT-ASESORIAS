@@ -209,7 +209,60 @@
                     <form action="" method="POST">
 
                         {% csrf_token %}
-                        {{ form | crispy }}
+                        <!--{{ form | crispy }}-->
+
+                        <!--extraccion creatasador-->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for=""><strong>Nombre</strong></label>
+                            <input type="text" name="nombre" id="nombre" class="form-control" 
+                            placeholder="Ingrese Nombre" required autocomplete="nombres"/>
+                          </div>
+    
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for=""><strong>Primer apellido</strong></label>
+                            <input type="text" name="apellido" id="apellido" class="form-control" 
+                            placeholder="Ingrese primer apellido" required autocomplete="apellido"/>
+                          </div>
+    
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for=""><strong>Contacto</strong></label>
+                            <input type="text" name="telefono" id="telefono" class="form-control" 
+                            placeholder="Ingrese telefono" required autocomplete="telefono" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"/>
+                          </div>
+    
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for=""><strong>Correo electronico</strong></label>
+                            <input type="email" name="email" id="email" class="form-control"
+                              placeholder="Ingrese su email" required autocomplete="email"/>
+                          </div>
+    
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for=""><strong>Contraseña</strong></label>
+                            <input type="password" name="password" id="password" class="form-control" 
+                            placeholder="correo@mail.com" required autocomplete="password"/>
+                          </div>
+    
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for=""><strong>Región a trabajar</strong></label>
+                            <select type="select" class="form-control text-muted" name="region" id="region" required autocomplete="region">
+                                <option class="text-muted">Seleccione una region</option>
+                                {% for c in regiones %}
+                                    <option value="{{ c.0 }}">{{ c.0 }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+    
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for=""><strong>permiso</strong></label>
+                            <select type="select" class="form-control text-muted" name="permiso" id="permiso" required autocomplete="permiso">
+                                <option class="text-muted">Seleccione un permiso</option>
+                                {% for r in permisos %}
+                                    <option value="{{ r.0 }}">{{ r.0 }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+        
+                        <!--fin extraccion-->
 
                         <br>
                         

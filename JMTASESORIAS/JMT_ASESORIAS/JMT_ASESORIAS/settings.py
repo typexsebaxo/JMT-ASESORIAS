@@ -28,8 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,7 +41,9 @@ INSTALLED_APPS = [
     'core',
     'colorfield',
     'crispy_forms',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'django.contrib.sites',
+    
 ]
 
 CRISPY_TEMPLATE_PACK = 'uni_form'

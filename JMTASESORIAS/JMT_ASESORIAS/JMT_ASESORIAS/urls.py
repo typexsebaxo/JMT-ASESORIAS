@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('', include('core.urls')),
+    #path('accounts/', include('django.contrib.auth.urls')),
     #path('inicioSesion/',views.InicioSesion, name='InicioSesion'),
     #path('menuadmin/',views.Menuadmin, name='menuadmin'),
     #path('admintasador/',views.Admintasador, name='admintasador'),
