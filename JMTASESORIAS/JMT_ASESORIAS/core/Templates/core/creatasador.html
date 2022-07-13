@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="/menutasacionadmin/">
+                    <a class="nav-link text-white " href="/menutasacion/">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa fa-handshake-o" aria-hidden="true"></i>
                     </div>
@@ -101,7 +101,7 @@
             </div>
             <div class="sidenav-footer position-absolute w-100 bottom-0 ">
                 <div class="mx-3">
-                <a class="btn bg-gradient-primary mt-4 w-100" href="/inicioSesion/" type="button">Cerrar sesion</a>
+                <a class="btn bg-gradient-primary mt-4 w-100" href="/" type="button">Cerrar sesion</a>
                 </div>
             </div>
             </aside>
@@ -207,49 +207,62 @@
     
                     <form action="" method="POST">
                         {% csrf_token %}
-                      <p>Ingrese los datos del nuevo tasador</p>
+                      <a><strong>Ingrese los datos del nuevo tasador</strong></a>
+                      <br>
                       <br>
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="">Correo electronico</label>
-                        <input type="email" name="email" id="email" class="form-control"
-                          placeholder="Ingrese su email" required autocomplete="email"/>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="">Contraseña</label>
-                        <input type="password" name="password" id="password" class="form-control" 
-                        placeholder="Ingrese su contraseña" required autocomplete="password"/>
-                      </div>
-
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="">Nombre</label>
+                        <label class="form-label" for=""><strong>Nombre</strong></label>
                         <input type="text" name="nombre" id="nombre" class="form-control" 
                         placeholder="Ingrese Nombre" required autocomplete="nombres"/>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="">Primer apellido</label>
+                        <label class="form-label" for=""><strong>Primer apellido</strong></label>
                         <input type="text" name="apellido" id="apellido" class="form-control" 
                         placeholder="Ingrese primer apellido" required autocomplete="apellido"/>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="">Región a trabajar</label>
+                        <label class="form-label" for=""><strong>Contacto</strong></label>
+                        <input type="text" name="telefono" id="telefono" class="form-control" 
+                        placeholder="Ingrese telefono" required autocomplete="telefono" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"/>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for=""><strong>Correo electronico</strong></label>
+                        <input type="email" name="email" id="email" class="form-control"
+                          placeholder="Ingrese su email" required autocomplete="email"/>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for=""><strong>Contraseña</strong></label>
+                        <input type="password" name="password" id="password" class="form-control" 
+                        placeholder="correo@mail.com" required autocomplete="password"/>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for=""><strong>Región a trabajar</strong></label>
                         <select type="select" class="form-control text-muted" name="region" id="region" required autocomplete="region">
                             <option class="text-muted">Seleccione una region</option>
                             {% for c in regiones %}
-                                <option value="{{ c.0 }}">{{ c.1 }}</option>
+                                <option value="{{ c.0 }}">{{ c.0 }}</option>
                             {% endfor %}
                           </select>
                       </div>
 
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="">Contacto</label>
-                        <input type="text" name="telefono" id="telefono" class="form-control" 
-                        placeholder="Ingrese telefono" required autocomplete="telefono" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"/>
+                        <label class="form-label" for=""><strong>permiso</strong></label>
+                        <select type="select" class="form-control text-muted" name="permiso" id="permiso" required autocomplete="permiso">
+                            <option class="text-muted">Seleccione un permiso</option>
+                            {% for r in permisos %}
+                                <option value="{{ r.0 }}">{{ r.0 }}</option>
+                            {% endfor %}
+                          </select>
                       </div>
     
                       <div class="text-center pt-1 mb-3 pb-1">
+                        <button value="Cancelar" type="submit" 
+                        class="btn btn-secondary fa-lg gradient-custom-2 mb-3">Limpiar</button>
                         <button value="Guardar" type="submit" 
                         class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/admintasador/">CONFIRMAR</button>
                       </div>
@@ -261,20 +274,7 @@
                     {{mensaje}}
                     
                                       <script>
-                                        //Funcion comprobar claves
-
-                                        function comprobarClaves() {
-                                            password = document.f1.clave1.value;
-                                            rep_password = document.f1.clave2.value;
-
-                                            if (password == rep_password) {
-                                                alert("Las dos claves son iguales")
-                                            }else{
-                                                alert("Las dos claves son distintas")
-                                            }
-                                        }
-
-                                       
+                                                                               
                                         //para visualizar la info al momento de inspeccionar la pagina.
                                         //console.log(email);
                                         //console.log(password);
