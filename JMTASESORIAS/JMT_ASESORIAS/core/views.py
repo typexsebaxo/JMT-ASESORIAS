@@ -4,7 +4,7 @@ from django.utils import html
 from django.http import HttpResponse
 from django.db import connection
 import cx_Oracle
-from .forms import UsuarioForm
+from .forms import UsuarioForm, TasacionForm
 
 # Create your views here.
 
@@ -39,7 +39,20 @@ def Notificacionesadmin(request):
     return render(request,"core/notificacionesadmin.html")
 
 def Newtasacion(request):
-    return render(request,"core/newtasacion.html")
+    
+    data = {
+        'form':TasacionForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = TasacionForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]= "Guardado correctamente"
+        else:
+            data["form"] = formulario
+    
+    return render(request,"core/newtasacion.html",data)
 
 def Agregar_usuario(request):
     

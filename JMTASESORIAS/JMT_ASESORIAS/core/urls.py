@@ -14,11 +14,11 @@ urlpatterns = [
     path('menutasador/', Menutasador, name='menutasador'),
     path('misproyectos/', Misproyectos, name='misproyectos'),
     path('agregar-tasador/',  Agregar_usuario, name='agregar_usuario'),
-    path('nueva_tasacion/',  Newtasacion, name='newtasacion'),
     path('casaz/', Casaz, name='casaz'),
     path('casa_apa/', Casapa, name='casapa'),
     path('casa_arn01/', CasaArn01, name='casaarn01'),
     path('casa_dinamarca/', CasaDina, name='casadinamarca'),
+    path('nueva_tasacion/',  Newtasacion, name='newtasacion'),
 ]
 
 

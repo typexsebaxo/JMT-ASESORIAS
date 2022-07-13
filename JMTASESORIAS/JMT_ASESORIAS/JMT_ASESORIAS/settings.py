@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'colorfield',
+    'crispy_forms',
+    'django.contrib.humanize'
 ]
 
+CRISPY_TEMPLATE_PACK = 'uni_form'
 X_FRAME_OPTIONS ='SAMEORIGIN' 
 
 MIDDLEWARE = [
