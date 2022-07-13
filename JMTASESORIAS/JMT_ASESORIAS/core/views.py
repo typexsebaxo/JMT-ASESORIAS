@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 from django.utils import html
 from django.http import HttpResponse
@@ -6,11 +6,12 @@ from django.db import connection
 import cx_Oracle
 from .forms import UsuarioForm, TasacionForm
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
-def Login(request):
- return render(request,"core/login.html")
+def Login_user(request):
+ return render(request,"authenticate/login.html", {})
 
 def Menuadmin(request):
     data = {
