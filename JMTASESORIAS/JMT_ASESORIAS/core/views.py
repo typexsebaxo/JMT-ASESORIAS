@@ -1,13 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 from django.utils import html
 from django.http import HttpResponse
 from django.db import connection
 import cx_Oracle
+from .models import *
 from .forms import UsuarioForm, TasacionForm
 from django.contrib import messages
+#from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
+
+
 
 def InicioSesion(request):
     
@@ -53,12 +57,28 @@ def Newtasacion(request):
         formulario = TasacionForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
+            
             #messages.success(request, "Nueva tasacion ingresada")
             data["mensaje"]= "Guardado correctamente"
         else:
             data["form"] = formulario
+        return redirect('/menutasacion/')     
     
     return render(request,"core/newtasacion.html",data)
+
+#def register(request):
+    
+#    if request.method == "POST":
+ #       form = UserCreationForm(request.POST)
+ #       if form.is_valid():
+ #           username = form.cleaned_data["username"]
+ #           messages.success(request, f'Usuario {username} creado')
+#            return redirect('/admintasador/')  
+#    else: 
+##        form = UserCreationForm()
+#    context = { 'form' : form }          
+    
+ #   return render(request, "core/usuario/agregar.html",context)
 
 def Agregar_usuario(request):
     
@@ -73,6 +93,7 @@ def Agregar_usuario(request):
             data["mensaje"]= "Guardado correctamente"
         else:
             data["form"] = formulario
+        return redirect('/admintasador/') 
     
     return render(request, "core/usuario/agregar.html", data)
 
@@ -117,6 +138,9 @@ def CasaArn01(request):
 
 def CasaDina(request):
     return render(request,"core/casaarn01.html")
+
+def Misproyectos(request):
+    return render(request,"core/misproyectos.html")
 
 
 def listar_permiso():
