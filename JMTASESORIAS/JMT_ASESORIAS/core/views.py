@@ -7,7 +7,8 @@ import cx_Oracle
 from .models import *
 from .forms import UsuarioForm, TasacionForm
 from django.contrib import messages
-#from django.contrib.auth.forms import UserCreationForm
+
+
 
 # Create your views here.
 
