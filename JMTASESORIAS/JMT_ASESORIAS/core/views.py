@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import Http404
 from django.utils import html
 from django.http import HttpResponse
@@ -6,12 +6,15 @@ from django.db import connection
 import cx_Oracle
 from .forms import UsuarioForm, TasacionForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
-def Login_user(request):
- return render(request,"authenticate/login.html", {})
+def InicioSesion(request):
+    
+    data = {
+        'permisos':listar_permiso()
+    }
+    return render(request,"core/iniciosession.html", data)
 
 def Menuadmin(request):
     data = {
@@ -114,6 +117,19 @@ def CasaArn01(request):
 
 def CasaDina(request):
     return render(request,"core/casaarn01.html")
+
+
+def listar_permiso():
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    out_cur = django_cursor.connection.cursor()
+    
+    cursor.callproc("SP_LISTAR_PERMISOS", [out_cur])
+    
+    lista = []
+    for fila in out_cur:
+        lista.append(fila)
+    return lista 
 
 
 def listado_usuario():

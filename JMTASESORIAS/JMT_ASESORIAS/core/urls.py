@@ -3,7 +3,7 @@ from django.conf import settings
 from .views import InicioSesion, Menuadmin, Admintasador, Menutasacionadmin, Graficostasacion, Notificacionesadmin, Creatasador, Menutasador, Misproyectos, Agregar_usuario, Casaz, Casapa, CasaArn01, CasaDina, Newtasacion
 
 urlpatterns = [
-    path('', InicioSesion, name='InicioSesion'),
+    path('', InicioSesion, name='iniciosesion'),
     #path('login/', loginAction, name='loginAction'),
     path('menuadmin/', Menuadmin, name='menuadmin'),
     path('admintasador/', Admintasador, name='admintasador'),

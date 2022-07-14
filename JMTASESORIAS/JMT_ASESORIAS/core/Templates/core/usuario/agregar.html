@@ -120,26 +120,16 @@
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center"> 
                 </div>
-                <ul class="navbar-nav  justify-content-end">
-                <li class="nav-item d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-body font-weight-bold px-2">
-                        <h6 class="fa fa-clock-o" id="display-time">
-                            <script>
-                                function myFunc()  {
-                                    var now = new Date();
-                                    var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                                    document.getElementById('display-time').innerHTML = time;
-                                }
-                                setInterval(myFunc, 1000);
-                            </script>
-                          </h6>
-                    </a>
-                </li>
+                
                 <!--notifications-->
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-bell-o" aria-hidden="true"></i>
                     </a>
+                    <!--reloj-->
+                    <a href="https://24timezones.com" style="text-decoration: none" class="clock24" id="tz24-1657769037-c1232-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIxIiwic2hvd3RpbWV6b25lIjoiMCIsInR5cGUiOiJkIiwibGFuZyI6ImVzIn0=" title="hora local" target="_blank"></a>
+                    <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+                    <!--fin reloj-->
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                     <li class="mb-2">
                         <a class="dropdown-item border-radius-md" href="javascript:;">
@@ -199,7 +189,7 @@
                 <div class="col-lg-4 mx-auto ">
                 <div class="card-body p-md-5 mx-md-4">
 
-                    <div class="text-center">
+                    <div class="text-center form-outline mb-4">
                       <img src="{% static 'core/img/logo.png' %}"
                         style="width: 120px;" alt="logo">
                       <h4 class="mt-1 mb-5 pb-1">Somos JMT Asesorías!</h4>
@@ -209,61 +199,9 @@
                     <form action="" method="POST">
 
                         {% csrf_token %}
-                        <!--{{ form | crispy }}-->
+                        {{ form | crispy }}
 
-                        <!--extraccion creatasador-->
-                        <div class="form-outline mb-4">
-                            <label class="form-label" for=""><strong>Nombre</strong></label>
-                            <input type="text" name="nombre" id="nombre" class="form-control" 
-                            placeholder="Ingrese Nombre" required autocomplete="nombres"/>
-                          </div>
-    
-                          <div class="form-outline mb-4">
-                            <label class="form-label" for=""><strong>Primer apellido</strong></label>
-                            <input type="text" name="apellido" id="apellido" class="form-control" 
-                            placeholder="Ingrese primer apellido" required autocomplete="apellido"/>
-                          </div>
-    
-                          <div class="form-outline mb-4">
-                            <label class="form-label" for=""><strong>Contacto</strong></label>
-                            <input type="text" name="telefono" id="telefono" class="form-control" 
-                            placeholder="Ingrese telefono" required autocomplete="telefono" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"/>
-                          </div>
-    
-                          <div class="form-outline mb-4">
-                            <label class="form-label" for=""><strong>Correo electronico</strong></label>
-                            <input type="email" name="email" id="email" class="form-control"
-                              placeholder="Ingrese su email" required autocomplete="email"/>
-                          </div>
-    
-                          <div class="form-outline mb-4">
-                            <label class="form-label" for=""><strong>Contraseña</strong></label>
-                            <input type="password" name="password" id="password" class="form-control" 
-                            placeholder="correo@mail.com" required autocomplete="password"/>
-                          </div>
-    
-                          <div class="form-outline mb-4">
-                            <label class="form-label" for=""><strong>Región a trabajar</strong></label>
-                            <select type="select" class="form-control text-muted" name="region" id="region" required autocomplete="region">
-                                <option class="text-muted">Seleccione una region</option>
-                                {% for c in regiones %}
-                                    <option value="{{ c.0 }}">{{ c.0 }}</option>
-                                {% endfor %}
-                              </select>
-                          </div>
-    
-                          <div class="form-outline mb-4">
-                            <label class="form-label" for=""><strong>permiso</strong></label>
-                            <select type="select" class="form-control text-muted" name="permiso" id="permiso" required autocomplete="permiso">
-                                <option class="text-muted">Seleccione un permiso</option>
-                                {% for r in permisos %}
-                                    <option value="{{ r.0 }}">{{ r.0 }}</option>
-                                {% endfor %}
-                              </select>
-                          </div>
-        
-                        <!--fin extraccion-->
-
+                        
                         <br>
                         
                         <div class="d-flex justify-content-center">
@@ -273,26 +211,7 @@
                     </form>   
 
                     {{mensaje}}
-                    
-                    
-                    
-                                      <script>
-                                        
-                                        //para visualizar la info al momento de inspeccionar la pagina.
-                                        //console.log(email);
-                                        //console.log(password);
-                                        //console.log(rep_password);
-                                        //console.log(nombres);
-                                        //console.log(primerapellido);
-                                        //console.log(segundoapellido);
-                                        //console.log(regiones);
-                                        //console.log(telefono);
-
-                                      </script>
-                                      <!--Fin funcion-->
-
-                    
-    
+                            
                   </div>
                 </div>
             </div>

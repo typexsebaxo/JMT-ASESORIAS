@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="bootstrap">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     
 
     <title>{% block title %}{% endblock %} JMT asesorías</title>
@@ -63,19 +64,27 @@
                               <span class="d-block text-muted">Ingrese sus datos</span>
                             </div>
                             <br >
+                            <hr>
                             <form method="POST" action="" class="form-group form-group-feedback form-group-feedback-left">
                               {% csrf_token %}
                                 <div class="container">
                                 <div class="form-outline mb-4">
-                                  <label for="">Email</label>
-                                  <input name="email" type="email" id="email" class="form-control"
+                                  <input  name="email" type="email" id="email" class="form-control"
                                     placeholder="Ingrese su correo" required autocomplete="email" >
                                 </div>
-              
+                                <hr>
                                 <div class="form-outline mb-4">
-                                  <label for="">Contraseña</label>
                                   <input name="password" type="password" id="password" class="form-control" 
                                   placeholder="Ingrese su contraseña" required autocomplete="password">
+                                </div>
+                                <hr>
+                                <div class="form-outline mb-4">
+                                  <select type="select" class="form-control text-muted" name="permiso" id="permiso" required autocomplete="permiso">
+                                      <option class="text-muted">Tipo de usuario</option>
+                                      {% for u in permisos %}
+                                          <option value="{{ u.0 }}">{{ u.0 }}</option>
+                                      {% endfor %}
+                                    </select>
                                 </div>
                                 <div class="text-center pt-1 mb-5 pb-1">
                                   <button type="submit" value="Ingresar" class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/menuadmin/">Ingresar</button>

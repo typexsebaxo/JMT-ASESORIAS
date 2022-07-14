@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'colorfield',
     'crispy_forms',
     'django.contrib.humanize',
-    'django.contrib.sites',
+    #'django.contrib.sites',   #revisar ya que cuando esta activo se cae el admin de django
     
 ]
 
