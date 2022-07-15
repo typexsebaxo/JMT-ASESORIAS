@@ -48,6 +48,7 @@ class Tasacion(models.Model):
     fecha = models.DateField()
     documentacion = models.BinaryField()
     usuario_nombre = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_nombre')
+    tasacion_region = models.ForeignKey(Region, models.DO_NOTHING, db_column='region_nombre')
 
     class Meta:
         managed = False
@@ -64,7 +65,6 @@ class Usuario(models.Model):
     correo = models.CharField(max_length=30)
     telefono = models.BigIntegerField()
     permiso_rol = models.ForeignKey(Permiso, models.DO_NOTHING, db_column='permiso_rol')
-    region_nombre = models.ForeignKey(Region, models.DO_NOTHING, db_column='region_nombre')
 
     class Meta:
         managed = False
