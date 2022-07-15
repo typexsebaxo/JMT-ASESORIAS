@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="es-cl">
 <head>
@@ -30,6 +31,7 @@
     
 
 </head>
+
 <body>
     
     <main>
@@ -90,7 +92,7 @@
                     <hr class="horizontal light mt-0 mb-2">
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white " href="../pages/profile.html">
+                    <a class="nav-link text-white " href="/misproyectos/">
                       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa fa-cog" aria-hidden="true"></i>
                       </div>
@@ -108,6 +110,9 @@
             <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!--Fin Menu-->
 
+
+              
+
         <!-- Navbar -->
 
         <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
@@ -120,26 +125,18 @@
               <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center"> 
                 </div>
-                <ul class="navbar-nav  justify-content-end">
-                  <li class="nav-item d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-body font-weight-bold px-2">
-                      <h6 class="fa fa-clock-o" id="display-time">
-                        <script>
-                            function myFunc()  {
-                                var now = new Date();
-                                var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                                document.getElementById('display-time').innerHTML = time;
-                            }
-                            setInterval(myFunc, 1000);
-                        </script>
-                      </h6>
-                    </a>
-                  </li>
+                
+
                   <!--notifications-->
-                  <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                  <li class="nav-item dropdown pe-2 d-flex align-items-end">
+                    
                     <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-bell-o" aria-hidden="true"></i>
                     </a>
+                     <!--reloj-->
+                     <a href="https://24timezones.com" style="text-decoration: none" class="clock24" id="tz24-1657769037-c1232-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIxIiwic2hvd3RpbWV6b25lIjoiMCIsInR5cGUiOiJkIiwibGFuZyI6ImVzIn0=" title="hora local" target="_blank"></a>
+                     <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+                     <!--fin reloj-->
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                       <li class="mb-2">
                         <a class="dropdown-item border-radius-md" href="javascript:;">
@@ -187,10 +184,44 @@
         <!-- Fin Navbar -->
 
         <div class="card card-body mx-3 mx-md-4">
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+          <!-- Menu
+          <nav id="menu">
+            <ul>
+              <li type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked><a  class="btn btn-outline-primary" for="btnradio1" href="#">Antofagasta</a>
+                <ul>
+                  <li><a href="#">playa blanca</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Atacama</a>
+                <ul>
+                  <li><a href="#">copiapo</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Enlace 2</a>
+                <ul>
+                  <li><a href="#">Enlace 2.1</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Enlace 2</a>
+                <ul>
+                  <li><a href="#">Enlace 2.1</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Enlace 2</a>
+                <ul>
+                  <li><a href="#">Enlace 2.1</a></li>
+                </ul>
+              </li>
+            </ul>
+            </nav>
+          Fin Menu-->
             
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+             
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
                 <label class="btn btn-outline-primary" for="btnradio1">Metropolitana</label>
+                
               
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
                 <label class="btn btn-outline-primary" for="btnradio2">Tarapacá</label>
@@ -224,19 +255,20 @@
 
                 <input type="radio" class="btn-check" name="btnradio" id="btnradio12" autocomplete="off">
                 <label class="btn btn-outline-primary" for="btnradio12">Ñuble</label>
+                  
             </div>
         </div>
         
-        <div class="container-fluid py-4">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card my-4">                    
-                        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                            <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+        <div class="container-fluid py-4 ">
+            <div class="row ">
+                <div class="col-12 ">
+                    <div class="card my-4 ">                    
+                        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 ">
+                            <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3 ">
                                
-                                <div class="row gx-4 mb-2">
-                                    <div class="col-auto my-auto">
-                                        <div class="h-100">
+                                <div class="row mx-3 mx-md-4">
+                                    <div class="col-auto my-auto ">
+                                        <div class="h-100 ">
                                             <h4 class="mb-2"><strong class="text-white">Tasaciones</strong></h4>
                                         </div>
                                     </div>
@@ -244,7 +276,7 @@
                                     <div class="col-lg-2 col-md-6 my-sm-auto ms-sm-auto me-sm-1 mx-auto mt-0">
                                         <div class="nav-wrapper position-relative end-3">
                                             <div class="text-center pt-2 pb-0 ">
-                                                <p class="btn btn-primary fa-lg gradient-custom-2 text-white bg-rosee" href="/nueva_tasacion/"><strong>Nuevo tasador!</strong></p>
+                                                <a class="gradient-custom-2 text-white bg-rosee text-upper" href="/nueva_tasacion/"><strong class="text-white">Nueva Tasacion!</strong></a>
                                             </div>
                                         </div>
                                     </div>
@@ -255,24 +287,139 @@
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive p-0">
                                 
-                                    <table class="table align-items-center mb-0">
+                                    <!--<table class="table align-items-center mb-1 table-striped table-hover table-responsive-sm">
                                       <tr>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tasador</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Propietario</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Rut propietario</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Documentacion</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha de tasacion</th>
+                                        <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Tasador</th>
+                                        <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Propietario</th>
+                                        <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Rut propietario</th>
+                                        <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Documentacion</th>
+                                        <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Fecha de tasacion</th>
                                       </tr>
+                                      <br><br>
                                       {%for t in tasaciones %}
                                         <tr>
-                                          <td>{{t.4}}</td>
-                                          <td>{{t.1}}</td>
-                                          <td>{{t.0}}</td>
-                                          <td>{{t.3}}</td>
-                                          <td>{{t.2}}</td>
+                                          <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.4}}</td>
+                                          <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.1}}</td>
+                                          <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.0}}</td>
+                                          <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.3}}</td>
+                                          <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.2}}</td>
                                         </tr>
                                       {%endfor%}  
-                                    </table>
+                                    </table>-->
+
+                                    <head>
+                                      <meta content="initial-scale=1, 
+                                             maximum-scale=1, user-scalable=0" name="viewport" />
+                                      <meta name="viewport" content="width=device-width" />
+                                      
+                                      <!--Datatable plugin CSS file -->
+                                      <link rel="stylesheet" href=
+                                    "https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+                                      <!--jQuery library file -->
+                                      <script type="text/javascript" src=
+                                        "https://code.jquery.com/jquery-3.5.1.js">
+                                      </script>
+                                        
+                                      <!--Datatable plugin JS library file -->
+                                      <script type="text/javascript" src=
+                                    "https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+                                      </script>
+                                      
+                                      <style>
+                                        td {
+                                          text-align: center;
+                                        }
+                                      </style>
+                                    </head>
+                                      
+                                    <body>
+                                      
+                                      
+                                      <!--Datatable con filtro-->
+                                      <table id="tableID" class="display table align-items-center mb-1 table-striped table-hover table-responsive-sm" 
+                                          style="width: 100%">
+                                        <thead>
+                                          <tr>
+                                            <th>Tasador</th>
+                                            <th>Propietario</th>
+                                            <th>Rut propietario</th>
+                                            <th>Documentacion</th>
+                                            <th>Fecha de tasacion</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tr>
+                                        <br><br>
+                                        {%for t in tasaciones %}
+                                          <tr>
+                                            <td>{{t.4}}</td>
+                                            <td>{{t.1}}</td>
+                                            <td>{{t.0}}</td>
+                                            <td>{{t.3}}</td>
+                                            <td>{{t.2}}</td>
+                                          </tr>
+                                        {%endfor%}
+                                        </tbody>
+                                      </table>
+                                      <br />
+                                      
+                                      <script>
+                                      
+                                          /* Inicialización de tablas de datos */
+                                          $(document).ready(function () {
+                                      
+                                            // La paginación y otra información son
+                                            // deshabilitado si es necesario, establecido en verdadero
+                                            var myTable = $("#tableID").DataTable({
+                                              paging: true,
+                                              searching: true,
+                                              info: true,
+                                            });
+                                      
+                                            // La matriz 2d se convierte en una matriz 1D
+                                            // estructura las acciones son
+                                            // implementado en CADA columna
+                                            myTable
+                                              .columns()
+                                              .flatten()
+                                              .each(function (colID) {
+                                      
+                                                // Crea la lista de selección en el
+                                                // encabezado de columna de encabezado
+                                                // Al cambiar los valores de la lista,
+                                                // realizar la operación de búsqueda
+                                                var mySelectList = $("<select />")
+                                                  .appendTo(myTable.column(colID).header())
+                                                  .on("change", function () {
+                                                    myTable.column(colID).search($(this).val());
+                                      
+                                                    // actualiza los cambios usando el método draw()
+                                                    myTable.column(colID).draw();
+                                                  });
+                                      
+                                                // Obtener los datos almacenados en caché de búsqueda para el
+                                                // agregar la primera columna a la lista de selección
+                                                // usando el método append()
+                                                // ordenar los datos para mostrar al usuario
+                                                // todos los pasos se realizan para CADA columna
+                                                myTable
+                                                  .column(colID)
+                                                  .cache("search")
+                                                  .sort()
+                                                  .each(function (param) {
+                                                    mySelectList.append(
+                                                      $('<option value="' + param + '">'
+                                                        + param + "</option>")
+                                                    );
+                                                  });
+                                              });
+                                          });
+                                      </script>
+                                    </body>
+                                      
+                                    </html>
+
+
                             </div>                         
                         </div>
                     </div>
@@ -312,8 +459,65 @@
   
   
       <!-- FIN Footer Section -->
-     
-  
+
+      <!-- style de sub menu -->
+    <style> 
+    #menu ul li {
+        background-color:#2e518b;
+    }
+    
+    #menu ul {
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+    
+    #menu ul a {
+      display:block;
+      color:#fff;
+      text-decoration:none;
+      font-weight:400;
+      font-size:15px;
+      padding:10px;
+      font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    
+    #menu ul li {
+      position:relative;
+      float:left;
+      margin:0;
+      padding:0;
+    }
+    
+    #menu ul li:hover {
+      background:#5b78a7;
+    }
+    
+    #menu ul ul {
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      padding:0;
+    }
+    
+    #menu ul ul li {
+      float:none;
+      width:150px
+    }
+    
+    #menu ul ul a {
+      line-height:120%;
+      padding:10px 15px;
+    }
+    
+    #menu ul li:hover > ul {
+      display:block;
+    }
+    </style> 
+    
   
 
     <!--Bootstrap 5 code -->

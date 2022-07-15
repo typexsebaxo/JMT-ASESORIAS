@@ -28,8 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,8 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'colorfield',
+    'crispy_forms',
+    'django.contrib.humanize',
+    #'django.contrib.sites',   #revisar ya que cuando esta activo se cae el admin de django
+    
 ]
 
+CRISPY_TEMPLATE_PACK = 'uni_form'
 X_FRAME_OPTIONS ='SAMEORIGIN' 
 
 MIDDLEWARE = [
@@ -95,6 +98,7 @@ DATABASES = {
 }
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -139,3 +143,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#LOGIN_REDIRECT_URL = 'menuadmin/'

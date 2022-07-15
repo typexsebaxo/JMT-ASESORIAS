@@ -1,15 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 from django.utils import html
 from django.http import HttpResponse
 from django.db import connection
 import cx_Oracle
-from .forms import UsuarioForm
+from .models import *
+from .forms import UsuarioForm, TasacionForm
+from django.contrib import messages
+
+
 
 # Create your views here.
 
+
+
 def InicioSesion(request):
- return render(request,"core/InicioSesion.html")
+    
+    data = {
+        'permisos':listar_permiso()
+    }
+    return render(request,"core/iniciosession.html", data)
 
 def Menuadmin(request):
     data = {
@@ -39,7 +49,37 @@ def Notificacionesadmin(request):
     return render(request,"core/notificacionesadmin.html")
 
 def Newtasacion(request):
-    return render(request,"core/newtasacion.html")
+    
+    data = {
+        'form':TasacionForm()
+    }
+    
+    if request.method == 'POST':
+        formulario = TasacionForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            
+            #messages.success(request, "Nueva tasacion ingresada")
+            data["mensaje"]= "Guardado correctamente"
+        else:
+            data["form"] = formulario
+        return redirect('/menutasacion/')     
+    
+    return render(request,"core/newtasacion.html",data)
+
+#def register(request):
+    
+#    if request.method == "POST":
+ #       form = UserCreationForm(request.POST)
+ #       if form.is_valid():
+ #           username = form.cleaned_data["username"]
+ #           messages.success(request, f'Usuario {username} creado')
+#            return redirect('/admintasador/')  
+#    else: 
+##        form = UserCreationForm()
+#    context = { 'form' : form }          
+    
+ #   return render(request, "core/usuario/agregar.html",context)
 
 def Agregar_usuario(request):
     
@@ -54,6 +94,7 @@ def Agregar_usuario(request):
             data["mensaje"]= "Guardado correctamente"
         else:
             data["form"] = formulario
+        return redirect('/admintasador/') 
     
     return render(request, "core/usuario/agregar.html", data)
 
@@ -98,6 +139,22 @@ def CasaArn01(request):
 
 def CasaDina(request):
     return render(request,"core/casaarn01.html")
+
+def Misproyectos(request):
+    return render(request,"core/misproyectos.html")
+
+
+def listar_permiso():
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    out_cur = django_cursor.connection.cursor()
+    
+    cursor.callproc("SP_LISTAR_PERMISOS", [out_cur])
+    
+    lista = []
+    for fila in out_cur:
+        lista.append(fila)
+    return lista 
 
 
 def listado_usuario():

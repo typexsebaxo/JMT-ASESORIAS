@@ -32,4 +32,8 @@ begin
     open usuario for select * from usuario;
 end;
 
-
+create or replace procedure sp_listar_permisos(permiso_rol out SYS_REFCURSOR)
+is
+begin
+    open permiso_rol for select * from permiso;
+end;

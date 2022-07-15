@@ -90,7 +90,7 @@
                     <hr class="horizontal light mt-0 mb-2">
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white " href="../pages/profile.html">
+                    <a class="nav-link text-white " href="/misproyectos/">
                       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa fa-cog" aria-hidden="true"></i>
                       </div>
@@ -120,26 +120,16 @@
               <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center"> 
                 </div>
-                <ul class="navbar-nav  justify-content-end">
-                  <li class="nav-item d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-body font-weight-bold px-2">
-                      <h6 class="fa fa-clock-o" id="display-time">
-                        <script>
-                            function myFunc()  {
-                                var now = new Date();
-                                var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                                document.getElementById('display-time').innerHTML = time;
-                            }
-                            setInterval(myFunc, 1000);
-                        </script>
-                      </h6>
-                    </a>
-                  </li>
+                
                   <!--notifications-->
                   <li class="nav-item dropdown pe-2 d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-bell-o" aria-hidden="true"></i>
                     </a>
+                    <!--reloj-->
+                    <a href="https://24timezones.com" style="text-decoration: none" class="clock24" id="tz24-1657769037-c1232-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIxIiwic2hvd3RpbWV6b25lIjoiMCIsInR5cGUiOiJkIiwibGFuZyI6ImVzIn0=" title="hora local" target="_blank"></a>
+                    <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+                    <!--fin reloj-->
                     <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                       <li class="mb-2">
                         <a class="dropdown-item border-radius-md" href="javascript:;">
@@ -232,10 +222,10 @@
                         <hr class="horizontal gray-light my-4">
                         <ul class="list-group">
                           {%for p in usuarios %}
-                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre:</strong> &nbsp; {{ p.1 | upper }}</li>
-                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Apellido:</strong> &nbsp; {{ p.2 | upper }}</li>
-                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Numero:</strong> &nbsp; {{ p.5 | upper }}</li>
-                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{ p.4 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre:</strong> &nbsp; {{ p.0 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Apellido:</strong> &nbsp; {{ p.1 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Numero:</strong> &nbsp; {{ p.4 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{ p.3 | upper }}</li>
                           <li class="list-group-item border-0 ps-0 pb-0">
                           {%endfor%}    
                             <strong class="text-dark text-sm">Social:</strong> &nbsp;
@@ -329,7 +319,7 @@
                           </div>
                           <div class="card-body p-3">
                             <p class="mb-0 text-sm">Casa Z</p>
-                            <a href="/casaz/">
+                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
                               <h5>
                                 Barrio Las Flores
                               </h5>
@@ -341,7 +331,7 @@
                                 Clientes : Gonzalo Cáceres Dancuart
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                              <a href="/casaz/">
+                              <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
                               <button type="button" class="btn btn-outline-primary btn-sm mb-0">Ver proyecto</button>
                               <div class="avatar-group mt-2">
                                 <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom">
@@ -350,26 +340,12 @@
                               </div>
                             </div>
                             <p>
-                              <!--API
-                              <div id ="map1" style="width:100%;height:400px;"> </div> 
-                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmuJMM08fPBOlopyLYn0geSSsBUA3FNCk&callback=initMap1" async defer></script>
-                                 <script>
-                                   
-                                     var map1;
-                                   function initMap1() {
-                                       map1 = new google.maps.Map(document.getElementById('map1'),{
-                                     center: {lat: -33.35950, lng: -70.49267},
-                                         zoom: 13,
-                                       });
-                                       var marker = new google.maps.Marker({
-                                         position: {lat: -33.35950, lng: -70.49267},
-                                         map: map1,
-                                       });
-                                     }
 
-                                     
-                                 </script>
-                           API End-->
+                              
+                              <br>
+                              <!--API-->
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.5323625999854!2d-70.50643768495468!3d-33.35716498080071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc7402a1f9b2f527!2zMzPCsDIxJzI1LjgiUyA3MMKwMzAnMTUuMyJX!5e0!3m2!1ses!2scl!4v1657837267014!5m2!1ses!2scl" width="320" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                           <!--API End-->
                            </p>
                           </div>
                         </div>
@@ -395,7 +371,7 @@
                                 Clientes : Will Scott
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                              <a href="/casa_apa/">
+                              <a href="https://www.plataformaarquitectura.cl/cl/703793/casa-pa-slash-tabuenca-and-leache?ad_medium=widget&ad_name=category-houses-article-show">
                               <button type="button" class="btn btn-outline-primary btn-sm mb-0">Ver proyecto</button>
                               <div class="avatar-group mt-2">
                                 <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom">
@@ -404,26 +380,10 @@
                               </div>
                             </div>
                             <p>
-                              <!--API-->
-                              <!--<div id ="map2" style="width:100%;height:400px;"> </div> 
-                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap2" async defer></script>
-                                 <script>
-                                   
-                                     var map2;
-                                   function initMap2() {
-                                       map2 = new google.maps.Map(document.getElementById('map2'), {
-                                     center: {lat: -33.2, lng: -70.68},
-                                         zoom: 13,
-                                       });
-                                       var marker = new google.maps.Marker({
-                                         position: {lat: -33.2, lng: -70.68},
-                                         map: map2,
-                                       });
-                                     }
-
-                                     
-                                 </script>-->
-                           <!--API End-->
+                              <br>
+                             <!--API-->
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3338.5375883782453!2d-70.68218868495893!3d-33.19999998084641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x80cf9c2b63021de!2zMzPCsDEyJzAwLjAiUyA3MMKwNDAnNDguMCJX!5e0!3m2!1ses!2scl!4v1657836644177!5m2!1ses!2scl" width="320" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                       <!--API End-->
                            </p>
                           </div>
                         </div>
@@ -449,7 +409,7 @@
                                 Clientes : Ivan de Sousa
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                              <a href="/casa_arn01/">
+                              <a href="https://www.plataformaarquitectura.cl/cl/980864/casa-arn-01-i-da-arquitectos?ad_source=search&ad_medium=projects_tab">
                               <button type="button" class="btn btn-outline-primary btn-sm mb-0">Ver proyecto</button>
                               <div class="avatar-group mt-2">
                                 <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom">
@@ -458,26 +418,10 @@
                               </div>
                             </div>
                             <p>
+                              <br>
                               <!--API-->
-                              <!--<div id ="map3" style="width:100%;height:400px;"> </div> 
-                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap3" async defer></script>
-                                 <script>
-                                   
-                                     var map;
-                                   function initMap3() {
-                                       map3 = new google.maps.Map(document.getElementById('map3'), {
-                                     center: {lat: -33.4166, lng: -70.5833},
-                                         zoom: 13,
-                                       });
-                                       var marker = new google.maps.Marker({
-                                         position: {lat: -33.4166, lng: -70.5833},
-                                         map: map3,
-                                       });
-                                     }
-
-                                     
-                                 </script>-->
-                           <!--API End-->
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.2548329776578!2d-70.58548868495305!3d-33.41659998078369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeaed89aef4afed16!2zMzPCsDI0JzU5LjgiUyA3MMKwMzQnNTkuOSJX!5e0!3m2!1ses!2scl!4v1657836752703!5m2!1ses!2scl" width="320" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                       <!--API End-->
                            </p>
                           </div>
                         </div>
@@ -504,7 +448,7 @@
                             </p>
 
                             <div class="d-flex align-items-center justify-content-between">
-                              <a href="/casa_dinamarca/">
+                              <a href="https://www.plataformaarquitectura.cl/cl/703650/house-in-madrid-slash-a-cero?ad_medium=widget&ad_name=category-houses-article-show">
                               <button type="button" class="btn btn-outline-primary btn-sm mb-0">Ver proyecto</button>
                               <div class="avatar-group mt-2">
                                 <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom">
@@ -513,25 +457,9 @@
                               </div>
                             </div>
                             <p>
+                              <br>
                               <!--API-->
-                              <!--<div id ="map4" style="width:100%;height:400px;"> </div> 
-                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap4" async defer></script>
-                                 <script>
-                                   
-                                     var map;
-                                   function initMap4() {
-                                       map4 = new google.maps.Map(document.getElementById('map4'), {
-                                     center: {lat: -33.5130, lng: -70.5238},
-                                         zoom: 13,
-                                       });
-                                       var marker = new google.maps.Marker({
-                                         position: {lat: -33.5130, lng: -70.5238},
-                                         map: map4,
-                                       });
-                                     }
-
-                                     
-                                 </script>-->
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.553198002214!2d-70.52598868495033!3d-33.51299998075596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa01c5781cbbbb582!2zMzPCsDMwJzQ2LjgiUyA3MMKwMzEnMjUuNyJX!5e0!3m2!1ses!2scl!4v1657836865435!5m2!1ses!2scl" width="320" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                            <!--API End-->
                            </p>
                           </div>
