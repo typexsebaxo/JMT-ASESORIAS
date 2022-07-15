@@ -222,10 +222,10 @@
                         <hr class="horizontal gray-light my-4">
                         <ul class="list-group">
                           {%for p in usuarios %}
-                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre:</strong> &nbsp; {{ p.1 | upper }}</li>
-                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Apellido:</strong> &nbsp; {{ p.2 | upper }}</li>
-                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Numero:</strong> &nbsp; {{ p.5 | upper }}</li>
-                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{ p.4 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre:</strong> &nbsp; {{ p.0 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Apellido:</strong> &nbsp; {{ p.1 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Numero:</strong> &nbsp; {{ p.4 | upper }}</li>
+                          <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{ p.3 | upper }}</li>
                           <li class="list-group-item border-0 ps-0 pb-0">
                           {%endfor%}    
                             <strong class="text-dark text-sm">Social:</strong> &nbsp;
