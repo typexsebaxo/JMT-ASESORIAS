@@ -172,8 +172,142 @@
                         </p>
                       </div>
                     </div>
+                </div>        
+            <div class="row">
+              <div class="row">
+                <div class="col-12 col-xl-4">
+                  <div class="card card-plain h-100">
+                    <div class="card-header pb-0 p-3">
+                      <div class="row">
+                        <div class="col-md-8 d-flex align-items-center">
+                          <h6 class="mb-0">Informacion de perfil</h6>
+                        </div>
+                        <div class="col-md-4 text-end">
+                          <a href="javascript:;">
+                            <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body p-3">
+                      <p class="text-sm">
+                        Tasador inmobiliario y agrícola
+                      </p>
+                      <hr class="horizontal gray-light my-4">
+                      <ul class="list-group">
+                        {%for p in usuarios %}
+                        <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre:</strong> &nbsp; {{ p.0 | upper }}</li>
+                        <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Apellido:</strong> &nbsp; {{ p.1 | upper }}</li>
+                        <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Numero:</strong> &nbsp; {{ p.4 | upper }}</li>
+                        <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{ p.3 | upper }}</li>
+                        <li class="list-group-item border-0 ps-0 pb-0">
+                        {%endfor%}    
+                          <strong class="text-dark text-sm">Social:</strong> &nbsp;
+                          <a class="btn btn-facebook btn-simple mb-0 ps-1 pe-2 py-0" href="https://www.facebook.com/">
+                              <i class="fa fa-facebook" aria-hidden="true"></i>
+                          </a>
+                          <a class="btn btn-twitter btn-simple mb-0 ps-1 pe-2 py-0" href="https://twitter.com/home">
+                              <i class="fa fa-twitter" aria-hidden="true"></i>
+                          </a>
+                          <a class="btn btn-instagram btn-simple mb-0 ps-1 pe-2 py-0" href="https://www.instagram.com/">
+                              <i class="fa fa-instagram" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
+                <div class="col-12 col-xl-4">
+                  <div class="card card-plain h-100">
+                    <div class="card-header pb-0 p-3">
+                      <h6 class="mb-0">Chat</h6>
+                    </div>
+                    <div class="card-body p-3">
+                      <ul class="list-group">
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                          <div class="avatar me-3">
+                            <img src="{% static 'core/img/avatar2.jpg' %}" alt="kal" class="border-radius-lg shadow">
+                          </div>
+                          <div class="d-flex align-items-start flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Danko Osorio</h6>
+                            <p class="mb-0 text-xs">Gracias</p>
+                          </div>
+                          <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Contestar</a>
+                        </li>
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                          <div class="avatar me-3">
+                            <img src="{% static 'core/img/avatar6.jpg' %}" alt="kal" class="border-radius-lg shadow">
+                          </div>
+                          <div class="d-flex align-items-start flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Jorge Gonzales</h6>
+                            <p class="mb-0 text-xs">Si obvio</p>
+                          </div>
+                          <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Contestar</a>
+                        </li>
+                        <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                          <div class="avatar me-3">
+                            <img src="{% static 'core/img/avatar4.jpg' %}" alt="kal" class="border-radius-lg shadow">
+                          </div>
+                          <div class="d-flex align-items-start flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Ivanna Contreras</h6>
+                            <p class="mb-0 text-xs">Nos vemos</p>
+                          </div>
+                          <a class="btn btn-link pe-3 ps-0 mb-0 ms-auto w-25 w-md-auto" href="javascript:;">Contestar</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 mt-4">
+                  <div class="mb-5 ps-3">
+                    <h6 class="mb-1">Mis Projectos</h6>
+                    <p class="text-sm">Casas en Región Metropolitana</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                      <div class="card card-blog card-plain">
+                        <div class="card-header p-0 mt-n4 mx-3">
+                          <a class="d-block shadow-xl border-radius-x1">
+                              <img src="{% static 'core/img/casa4.jpg' %}" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                          </a>
+                        </div>
+                        <div class="card-body p-3">
+                          <p class="mb-0 text-sm">House in Dinamarca</p>
+                          <a href="https://www.plataformaarquitectura.cl/cl/703650/house-in-madrid-slash-a-cero?ad_medium=widget&ad_name=category-houses-article-show">
+                            <h5>
+                              Barrio Dinamarca
+                            </h5>
+                          </a>
+                          <p class="mb-1 text-sm">
+                              Equipo De Diseño : MdA Arquitectura
+                          </p>
+                          <p class="mb-1 text-sm">
+                              Clientes : Zevallos  Celle
+                          </p>
+
+                          <div class="d-flex align-items-center justify-content-between">
+                            <a href="https://www.plataformaarquitectura.cl/cl/703650/house-in-madrid-slash-a-cero?ad_medium=widget&ad_name=category-houses-article-show">
+                            <button type="button" class="btn btn-outline-primary btn-sm mb-0">Ver proyecto</button>
+                            <div class="avatar-group mt-2">
+                              <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                <img alt="Image placeholder" src="{% static 'core/img/avatar1.jpg' %}">
+                              </a>
+                            </div>
+                          </div>
+                          <p>
+                            <br>
+                            <!--API-->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.553198002214!2d-70.52598868495033!3d-33.51299998075596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa01c5781cbbbb582!2zMzPCsDMwJzQ2LjgiUyA3MMKwMzEnMjUuNyJX!5e0!3m2!1ses!2scl!4v1657836865435!5m2!1ses!2scl" width="320" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                         <!--API End-->
+                         </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
 
 
