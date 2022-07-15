@@ -135,7 +135,7 @@ def Casapa(request):
     return render(request,"core/casapa.html")
 
 def CasaArn01(request):
-    return render(request,"core/casadinamarca.html")
+    return render(request,"core/casas/casadinamarca.html")
 
 def CasaDina(request):
     return render(request,"core/casaarn01.html")

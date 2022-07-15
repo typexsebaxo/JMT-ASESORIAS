@@ -31,6 +31,7 @@ urlpatterns = [
     #path('menutasador/',views.Menutasador, name='menutasador'),
     #path('misproyectos/',views.Misproyectos, name='misproyectos'),
     #path('agregar-tasador/', views.Agregar_usuario, name='agregar_usuario'),
+    #path('casadinamarca/', views.casadinamarca, name='casadinamarca'),
 ]
 
 if settings.DEBUG:
