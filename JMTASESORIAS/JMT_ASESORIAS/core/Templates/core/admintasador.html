@@ -201,14 +201,20 @@
                   
                   <table class="table align-items-center mb-1 table-striped table-hover table-responsive-sm">
                     <tr>
-                      <th  class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Region</th>
+                      <th  class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Nombre</th>
+                      <th  class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Apellido</th>
                       <th class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Correo</th>
+                      <th class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Telefono</th>
+                      <th  class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Region</th>
                     </tr>
                     <br><br>
                     {%for p in usuarios %}
                       <tr>
+                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.0}}</td>
                         <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.1}}</td>
+                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.3}}</td>
                         <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.4}}</td>
+                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.6}}</td>
                       </tr>
                     {%endfor%}  
                   </table>

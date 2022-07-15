@@ -175,14 +175,8 @@
             </div>
           </nav>
 
-          <!-- nuevo grafico-->
+          <!--graficos-->
 
-          
-
-          <!--fin graficos nuevoa-->
-
-
-        
             <div class="row mt-4">
                 <div class="col-lg-4 col-md-6 mt-4 mb-4">
                     <div class="card z-index-2  ">
@@ -441,11 +435,10 @@ var ctx = document.getElementById("chart-bars").getContext("2d");
         },
         });
         var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
-
         new Chart(ctx3, {
         type: "line",
         data: {
-            labels: ["VIII", "METROP", "IV", "II"],
+            labels: ["Metropolitana", "Aysen", "Coquimbo", "Magallanes"],
             datasets: [{
             label: "Tasaciones",
             tension: 0,

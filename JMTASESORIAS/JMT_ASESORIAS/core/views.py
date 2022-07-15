@@ -43,6 +43,9 @@ def Menutasacionadmin(request):
     return render(request,"core/menutasacionadmin.html", data)
 
 def Graficostasacion(request):
+    data = {
+        'tasaciones':listado_tasacion()
+    }
     return render(request,"core/graficostasacion.html")
 
 def Notificacionesadmin(request):

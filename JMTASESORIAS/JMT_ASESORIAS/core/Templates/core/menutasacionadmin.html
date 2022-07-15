@@ -340,11 +340,11 @@
                                           style="width: 100%">
                                         <thead>
                                           <tr>
-                                            <th>Tasador</th>
-                                            <th>Propietario</th>
-                                            <th>Rut propietario</th>
-                                            <th>Documentacion</th>
-                                            <th>Fecha de tasacion</th>
+                                            <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Tasador</th>
+                                            <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Propietario</th>
+                                            <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Rut propietario</th>
+                                            <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Documentacion</th>
+                                            <th class="text-center text-uppercase bg-secondary text-white text-xs font-weight-bolder opacity-9">Fecha de tasacion</th>
                                           </tr>
                                         </thead>
                                         <tbody>
@@ -352,11 +352,11 @@
                                         <br><br>
                                         {%for t in tasaciones %}
                                           <tr>
-                                            <td>{{t.4}}</td>
-                                            <td>{{t.1}}</td>
-                                            <td>{{t.0}}</td>
-                                            <td>{{t.3}}</td>
-                                            <td>{{t.2}}</td>
+                                            <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.4}}</td>
+                                            <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.1}}</td>
+                                            <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.0}}</td>
+                                            <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.3}}</td>
+                                            <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{t.2}}</td>
                                           </tr>
                                         {%endfor%}
                                         </tbody>
