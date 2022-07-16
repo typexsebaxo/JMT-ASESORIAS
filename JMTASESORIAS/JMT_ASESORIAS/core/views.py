@@ -48,6 +48,9 @@ def Graficostasacion(request):
 def Notificacionesadmin(request):
     return render(request,"core/notificacionesadmin.html")
 
+def Notificacionestasador(request):
+    return render(request,"core/notificacionestasador.html")
+
 
 def Newtasacion(request):
     

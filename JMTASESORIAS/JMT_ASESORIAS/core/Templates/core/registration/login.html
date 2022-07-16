@@ -65,11 +65,11 @@
                             </div>
                             <br >
                             <hr>
-                            <form method="POST" action=" " class="usuario form-group form-group-feedback form-group-feedback-left">
+                            <form method="POST" action="" class="usuario form-group form-group-feedback form-group-feedback-left">
                               {% csrf_token %}
                               {{ form.as_p }}  
                                 <div class="text-center pt-1 mb-5 pb-1">
-                                  <a type="submit" value="Ingresar" class="btn btn-primary fa-lg gradient-custom-2 mb-3" >Ingresar</a>
+                                  <input type="submit" value="Iniciar Sesión">
                                   <br>
                                   <span class="password">Olvidaste tu <a href="mailto:recupass@mail.com" style="color: blue;">contraseña?</a></span>
                                 </div>
