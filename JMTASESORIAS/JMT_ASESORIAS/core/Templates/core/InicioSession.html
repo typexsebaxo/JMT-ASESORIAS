@@ -65,7 +65,7 @@
                             </div>
                             <br >
                             <hr>
-                            <form method="POST" action="#" class="form-group form-group-feedback form-group-feedback-left">
+                            <form method="POST" action="" class="form-group form-group-feedback form-group-feedback-left">
                               {% csrf_token %}
                                 <div class="container">
                                 <div class="form-outline mb-4">
@@ -78,16 +78,16 @@
                                   placeholder="Ingrese su contraseña" required autocomplete="password">
                                 </div>
                                 <hr>
-                                <!--<div class="form-outline mb-4">
+                                <div class="form-outline mb-4">
                                   <select type="select" class="form-control text-muted" name="permiso" id="permiso" required autocomplete="permiso">
                                       <option class="text-muted">Tipo de usuario</option>
                                       {% for u in permisos %}
                                           <option value="{{ u.0 }}">{{ u.0 }}</option>
                                       {% endfor %}
                                     </select>
-                                </div>-->
+                                </div>
                                 <div class="text-center pt-1 mb-5 pb-1">
-                                  <input type="submit" value="Iniciar Sesión" class="btn btn-primary fa-lg gradient-custom-2 mb-3">
+                                  <input type="submit" value="Iniciar Sesión" class="btn btn-primary fa-lg gradient-custom-2 mb-3" href="/menuadmin/">
                                   <br>
                                   <span class="password">Olvidaste tu <a href="mailto:recupass@mail.com" style="color: blue;">contraseña?</a></span>
                                 </div>
@@ -145,53 +145,6 @@
     </footer>
 
     <!-- FIN Footer Section -->
-    <!--restringir inicio session con php-->
-    <?php
-      include_once 'JMT_ASESORIAS/settings.py';
-
-      session_start();
-
-      if(isset($_GET['cerrar_sesion'])){
-        session_unset();
-
-        session_destroy();
-      }
-
-      if(isser($_SESSION['rol'])){
-        switch($_SESSION['rol']){
-          case 1:
-            header('core/menuadmin.html');
-          break;
-          
-          case 2:
-            header('core/menutasador.html');
-          break;
-          
-          default:
-        }
-      }
-
-      if(isset($_POST['username']) && isset($_POST['password'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        $db = new Database();
-        $query = $db->connect()->prepare('SELECT*FROM usuario WHERE username = :username AND password = :password');
-        $query->execute(^['username' => $username, 'password => $password']);
-
-        $row = $query->fetch(PDO::FETCH_NUM);
-        if($row == true){
-          
-        }else{
-          echo "El usuario o contraseña son incorrectos";
-        }
-      }
-    
-
-    ?>
-
-
-    <!--Fin restrincion-->
    
 
 
