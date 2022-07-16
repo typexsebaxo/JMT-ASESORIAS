@@ -13,7 +13,7 @@ urlpatterns = [
     # urls Libreria
     #path('login/', loginAction, name='loginAction'),
     path('menuadmin/', Menuadmin, name='menuadmin'),
-    path('admintasador/', Admintasador, name='admintasador'),
+    path('tasadores/', Admintasador, name='informaciontasadores'),
     path('menutasacion/', Menutasacionadmin, name='menutasacionadmin'),
     path('graficostasacion/', Graficostasacion, name='graficostasacion'),
     path('notificacionesadmin/', Notificacionesadmin, name='notificacionesadmin'),
