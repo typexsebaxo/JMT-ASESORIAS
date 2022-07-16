@@ -42,6 +42,12 @@ def Menutasacionadmin(request):
     }
     return render(request,"core/menutasacionadmin.html", data)
 
+def Menutasaciontasador(request):
+    data = {
+        'tasaciones':listado_tasacion()
+    }
+    return render(request,"core/tasaciontasador.html", data)
+
 def Graficostasacion(request):
     return render(request,"core/graficostasacion.html")
 
