@@ -180,39 +180,34 @@
             <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url(https://i.postimg.cc/JhssmQPF/httpspostimg-cc-MMkxyc84.jpg);">
                 <span class="mask  bg-gradient-primary  opacity-0"></span>
             </div>
-                <div class="row">
+                <!--<div class="row">-->
                     <div class="card card-body mx-3 mx-md-4 mt-n6">
                         <div class="card-header p-0 position-relative  mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                                 <h6 class="text-white text-capitalize ps-3 text-center">Nueva Tasacion! </h6>
                             </div>
                             <div class="col-lg-4 mx-auto ">
-                            <div class="card-body p-md-5 mx-md-4">
+                            <div class="card-body p-md-1 mx-md-1">
                     
-                            <div class="text-center card-body">
+                            <div class="text-center form-outline mb-4" >
                                     <img src="{% static 'core/img/logo.png' %}"
                                         style="width: 120px;" alt="logo">
                                     <h4 class="mt-1 mb-5 pb-1" text-center>Somos JMT Asesorías!</h4>
                                     </div>
                                     
                                     <p class="text-center">Ingrese los datos de la nueva tasacion</p>
-                                    <br>
-                                    <form action="" method="POST" enctype="multipart/form-data">
+                                    <hr>
+                                    <form class="form" action="" method="POST" enctype="multipart/form-data">
 
                                         {% csrf_token %}
                                         {{ form | crispy }}
 
-                                        <!--extraido de creatasasdor-->
-                                        
-                                        <!--fin extraccion-->
-
-                                        
-                                        <a class="d-flex justify-content-center" href="/menutasacion/">
-                                        <div>    
-                                        <input type="reset" value="Cancelar" class="btn btn-secondary" type="button">
-                                        <input type="submit" value="Guardar" class="btn btn-primary" href="/menutasacion/" type="button">
+                                        <br>
+                                        <div class="d-flex justify-content-center">    
+                                          <input type="reset" value="Cancelar" class="btn btn-secondary">
+                                          &nbsp;
+                                          <input type="submit" value="Guardar" class="btn btn-primary" href="/menutasacion/">
                                         </div>
-                                        <a>
                                     </form>   
 
                                     {{mensaje}}
@@ -220,7 +215,7 @@
                     
                         </div>
                     </div>
-                </div>
+                <!--</div>-->
             </div>
         </div>
 

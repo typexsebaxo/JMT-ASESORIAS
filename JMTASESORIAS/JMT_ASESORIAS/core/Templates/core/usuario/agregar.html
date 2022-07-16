@@ -196,16 +196,16 @@
                     </div>
                     <p>Ingrese los datos del nuevo tasador</p>
                       <hr>
-                    <form class="form" action="" method="POST">
+                    <form class="form" action="" method="POST" enctype="multipart/form-data">
 
                         {% csrf_token %}
                         {{ form | crispy}}
 
-                        
                         <br>
                         
                         <div class="d-flex justify-content-center">
                         <input type="reset" id="reset" value="Cancelar" class="btn btn-secondary">
+                        &nbsp;
                         <input type="submit" id="submit" value="Guardar" href="/admintasador/" class="btn btn-primary">
                         </div>
                     </form>   

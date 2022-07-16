@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LoginView, LogoutView
 from . import views
-from .views import InicioSesion, Menuadmin, Admintasador, Menutasacionadmin, Graficostasacion, Notificacionesadmin, Creatasador, Menutasador, Misproyectos, Agregar_usuario, Casaz, Casapa, CasaArn01, CasaDina, Newtasacion, Misproyectos
+from .views import InicioSesion, Menuadmin, Admintasador, Menutasacionadmin, Graficostasacion, Notificacionesadmin, Menutasador, Misproyectos, Agregar_usuario, Casaz, Casapa, CasaArn01, CasaDina, Newtasacion, Misproyectos
 
 urlpatterns = [
     path('', InicioSesion, name='iniciosesion'),
@@ -17,7 +17,6 @@ urlpatterns = [
     path('menutasacion/', Menutasacionadmin, name='menutasacionadmin'),
     path('graficostasacion/', Graficostasacion, name='graficostasacion'),
     path('notificacionesadmin/', Notificacionesadmin, name='notificacionesadmin'),
-    path('creatasador/', Creatasador, name='creatasador'),
     path('menutasador/', Menutasador, name='menutasador'),
     path('misproyectos/', Misproyectos, name='misproyectos'),
     path('agregar-tasador/',  Agregar_usuario, name='agregar-tasador'),

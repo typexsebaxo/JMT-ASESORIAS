@@ -1,5 +1,5 @@
 from django import forms
-from .models import Usuario, Tasacion, Usuario
+from .models import Usuario, Tasacion
 #from django.contrib.auth.forms import UserCreationForm
 
 
