@@ -138,10 +138,10 @@ def Casaz(request):
 def Casapa(request):
     return render(request,"core/casas/casapa.html")
 
-def CasaArn01(request):
+def CasaDina(request):
     return render(request,"core/casas/casadinamarca.html")
 
-def CasaDina(request):
+def CasaArn01(request):
     return render(request,"core/casas/casaarn01.html")
 
 def Misproyectos(request):
