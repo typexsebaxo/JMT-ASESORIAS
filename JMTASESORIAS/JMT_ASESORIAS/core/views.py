@@ -1,14 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import Http404
-from django.utils import html
-from django.http import HttpResponse
 from django.db import connection
 import cx_Oracle
 from .models import *
 from .forms import UsuarioForm, TasacionForm
-from django.contrib import messages
-
-
 
 # Create your views here.
 
@@ -68,7 +62,7 @@ def Newtasacion(request):
         formulario = TasacionForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            
+            return redirect('/tasaciones-tasador/') # para direccionarlo a la views
             #messages.success(request, "Nueva tasacion ingresada")
             data["mensaje"]= "Guardado correctamente"
         else:

@@ -17,21 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('', include('core.urls')),
-    #path('inicioSesion/',views.InicioSesion, name='InicioSesion'),
-    #path('menuadmin/',views.Menuadmin, name='menuadmin'),
-    #path('admintasador/',views.Admintasador, name='admintasador'),
-    #path('menutasacionadmin/',views.Menutasacionadmin, name='menutasacionadmin'),
-    #path('graficostasacion/',views.Graficostasacion, name='graficostasacion'),
-    #path('notificacionesadmin/',views.Notificacionesadmin, name='notificacionesadmin'),
-    #path('creatasador/',views.Creatasador, name='creatasador'),
-    #path('menutasador/',views.Menutasador, name='menutasador'),
-    #path('misproyectos/',views.Misproyectos, name='misproyectos'),
-    #path('agregar-tasador/', views.Agregar_usuario, name='agregar_usuario'),
-    #path('casadinamarca/', views.casadinamarca, name='casadinamarca'),
 ]
 
 if settings.DEBUG:
