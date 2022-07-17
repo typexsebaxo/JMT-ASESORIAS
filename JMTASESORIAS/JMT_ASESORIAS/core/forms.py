@@ -24,6 +24,7 @@ class TasacionForm(forms.ModelForm):
     class Meta:
         model = Tasacion
         fields = '__all__'
+        documentacion = forms.FileField()
         
         widgets = {
             "fecha" : forms.SelectDateWidget()
