@@ -67,23 +67,10 @@ def Newtasacion(request):
             data["mensaje"]= "Guardado correctamente"
         else:
             data["form"] = formulario
-        return redirect('/menutasacion/')     
+        return redirect('/tasaciones-tasador/')  # para direccionarlo a la views  
     
     return render(request,"core/newtasacion.html",data)
 
-#def register(request):
-    
-#    if request.method == "POST":
- #       form = UserCreationForm(request.POST)
- #       if form.is_valid():
- #           username = form.cleaned_data["username"]
- #           messages.success(request, f'Usuario {username} creado')
-#            return redirect('/admintasador/')  
-#    else: 
-##        form = UserCreationForm()
-#    context = { 'form' : form }          
-    
- #   return render(request, "core/usuario/agregar.html",context)
 
 def Agregar_usuario(request):
     
@@ -217,13 +204,3 @@ def agregar_tasador(nombre, apellido, telefono, correo, contrasena, permiso_rol,
     return salida.getvalue()
 
 
-
-#def loginAction(request):
-    #print "Its workjing"
-    #if request.method == 'POST' and 'loginButton' in request.POST:
-    #    email = request.POST.get('email')
-    #    password = request.POST.get('password')
-
-        #print email, password
-
-    #return HttpResponse(json.dumps({}),content_type="application/json")
