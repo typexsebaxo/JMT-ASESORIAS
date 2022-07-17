@@ -90,13 +90,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': '127.0.0.1:1521/xe',
-<<<<<<< Updated upstream
         'USER': 'C###PRUEBA',
         'PASSWORD': '123',
-=======
-        'USER': 'c##JMT',
-        'PASSWORD': 'oracle',
->>>>>>> Stashed changes
         'TEST': {
             'USER': 'default_test',
             'TBLSPACE': 'default_test_tbls',
