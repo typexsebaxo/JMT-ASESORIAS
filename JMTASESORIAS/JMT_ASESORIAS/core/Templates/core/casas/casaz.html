@@ -186,10 +186,11 @@
                 </div>
                 <hr>
                 <!--Subida de archivos-->
-                <form method="post" class="form-signin" enctype="multipart/form-data">
+                <form method="post" class="form-signin col-12 col-xl-4 mb-3 pt-2 mx-3" enctype="multipart/form-data">
                   {% csrf_token %}
                   <input type="file" name="myfile">
-                  <input type="submit" value="Subir Archivo" class="btn btn-primary fa-lg gradient-custom-2 mb-3">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="submit" value="Subir Archivo" class="btn btn-secondary fa-lg gradient-custom-2 mb-3">
                 </form>
                 <!--Para verificar si el archivo subio correctamente-->
                 {% if uploaded_file_url %}

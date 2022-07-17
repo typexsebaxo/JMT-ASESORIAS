@@ -126,19 +126,43 @@ def Casaz(request):
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
-        uploaded_file_url = fs.upload(filename)
+        uploaded_file_url = fs.url(filename)
         return render(request, 'core/casas/casaz.html', {
             'uploaded_file_url': uploaded_file_url
             })
     return render(request,"core/casas/casaz.html")
 
 def Casapa(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'core/casas/casapa.html', {
+            'uploaded_file_url': uploaded_file_url
+            })
     return render(request,"core/casas/casapa.html")
 
 def CasaDina(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'core/casas/casadinamarca.html', {
+            'uploaded_file_url': uploaded_file_url
+            })
     return render(request,"core/casas/casadinamarca.html")
 
 def CasaArn01(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'core/casas/casaarn01.html', {
+            'uploaded_file_url': uploaded_file_url
+            })
     return render(request,"core/casas/casaarn01.html")
 
 def Misproyectos(request):
