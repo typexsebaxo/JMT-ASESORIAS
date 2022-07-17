@@ -3,6 +3,7 @@ from django.db import connection
 import cx_Oracle
 from .models import *
 from .forms import UsuarioForm, TasacionForm
+from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 
@@ -121,6 +122,14 @@ def Misproyectos(request):
     return render(request,"core/misproyectos.html")
 
 def Casaz(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.upload(filename)
+        return render(request, 'core/casas/casaz.html', {
+            'uploaded_file_url': uploaded_file_url
+            })
     return render(request,"core/casas/casaz.html")
 
 def Casapa(request):
