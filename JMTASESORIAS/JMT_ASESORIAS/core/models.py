@@ -63,7 +63,7 @@ class Usuario(models.Model):
     nombre = models.CharField(primary_key=True, max_length=50)
     apellido = models.CharField(max_length=50)
     contrasena = models.CharField(max_length=25)
-    correo = models.CharField(max_length=30)
+    correo = models.EmailField(max_length=30)
     telefono = models.BigIntegerField()
     permiso_rol = models.ForeignKey(Permiso, models.DO_NOTHING, db_column='permiso_rol')
 

@@ -13,6 +13,7 @@ def InicioSesion(request):
     data = {
         'permisos':listar_permiso()
     }
+    
     return render(request,"core/iniciosession.html", data)
 
 def Menuadmin(request):
@@ -32,8 +33,7 @@ def Admintasador(request):
 
 def Menutasacionadmin(request):
     data = {
-        'tasaciones':listado_tasacion(),
-        'ciudades':listar_ciudades()
+        'tasaciones':listado_tasacion()
     }
     return render(request,"core/menutasacionadmin.html", data)
 
@@ -173,17 +173,7 @@ def listado_tasacion():
         lista.append(fila)
     return lista 
 
-def listar_ciudades():
-    django_cursor = connection.cursor()
-    cursor = django_cursor.connection.cursor()
-    out_cur = django_cursor.connection.cursor()
-    
-    cursor.callproc("SP_LISTAR_CIUDAD", [out_cur])
-    
-    lista = []
-    for fila in out_cur:
-        lista.append(fila)
-    return lista 
+
 
 def Listar_regiones():
     django_cursor = connection.cursor()
