@@ -4,6 +4,12 @@ begin
     open regiones for select * from region;
 end;
 
+create or replace procedure sp_listar_ciudad(ciudades out SYS_REFCURSOR)
+is
+begin
+    open ciudades for select * from ciudad;
+end;
+
 create or replace procedure sp_listar_permisos(permisos out SYS_REFCURSOR)
 is
 begin

@@ -32,7 +32,8 @@ def Admintasador(request):
 
 def Menutasacionadmin(request):
     data = {
-        'tasaciones':listado_tasacion()
+        'tasaciones':listado_tasacion(),
+        'ciudades':listar_ciudades()
     }
     return render(request,"core/menutasacionadmin.html", data)
 
@@ -166,6 +167,18 @@ def listado_tasacion():
     out_cur = django_cursor.connection.cursor()
     
     cursor.callproc("SP_LISTAR_TASACION", [out_cur])
+    
+    lista = []
+    for fila in out_cur:
+        lista.append(fila)
+    return lista 
+
+def listar_ciudades():
+    django_cursor = connection.cursor()
+    cursor = django_cursor.connection.cursor()
+    out_cur = django_cursor.connection.cursor()
+    
+    cursor.callproc("SP_LISTAR_CIUDAD", [out_cur])
     
     lista = []
     for fila in out_cur:

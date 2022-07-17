@@ -46,8 +46,8 @@ class Region(models.Model):
 class Tasacion(models.Model):
     rut_propietario = models.CharField(primary_key=True, max_length=15)
     propietario = models.CharField(max_length=50)
-    fecha = models.DateField()
-    documentacion = models.FileField()
+    fecha = models.DateTimeField(auto_now = True)
+    documentacion = models.BinaryField()
     usuario_nombre = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_nombre')
     tasacion_region = models.ForeignKey(Region, models.DO_NOTHING, db_column='region_nombre')
 
