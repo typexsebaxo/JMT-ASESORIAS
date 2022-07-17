@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,7 @@ SECRET_KEY = 'django-insecure-94s-ug$w^idg#-dl2*!y3yuf4!n9xn9#*_&rwwz7sof=q35dp&
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 
 
@@ -143,5 +145,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-#LOGIN_REDIRECT_URL = 'menuadmin/'

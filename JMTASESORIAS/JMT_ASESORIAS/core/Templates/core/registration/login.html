@@ -65,7 +65,7 @@
                             </div>
                             <br >
                             <hr>
-                            <form method="POST" action="" class="usuario form-group form-group-feedback form-group-feedback-left">
+                            <!--<form method="POST" action="" class="usuario form-group form-group-feedback form-group-feedback-left">
                               {% csrf_token %}
                               {{ form.as_p }}  
                                 <div class="text-center pt-1 mb-5 pb-1">
@@ -74,9 +74,9 @@
                                   <span class="password">Olvidaste tu <a href="mailto:recupass@mail.com" style="color: blue;">contraseña?</a></span>
                                 </div>
                               </div>
-                            </form>
+                            </form>-->
 
-                            <form method="POST" class="usuario form-group form-group-feedback form-group-feedback-left">
+                            <form id="form-login" method="POST" class="usuario form-group form-group-feedback form-group-feedback-left">
                               {% csrf_token %}
                               {% if form.errors %}
                                 <div class="alert alert-danger alert-dismissible" role="alert">
@@ -91,17 +91,14 @@
                                 </div>
                               {% endif %}
                               <div class="block">
-                                <label for="username">Username</label>
+                                <label for="username">Usuario</label>
                                 {{ form.username }}
                               </div>
                               <div class="block ">
-                                <label for="password">Password</label>
+                                <label for="password">Contraseña</label>
                                 {{ form.password }}
                               </div>
-                              <div class="block center">
-                                <label for="remember_me">Remember me</label>
-                                {{ form.remember_me }}
-                              </div>
+                              
                               
                               <div class="block center">
                                 <p><input name="submit" type="submit" value="Iniciar Sesión"></p>

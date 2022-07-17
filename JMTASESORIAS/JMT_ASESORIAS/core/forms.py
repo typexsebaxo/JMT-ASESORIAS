@@ -27,5 +27,8 @@ class TasacionForm(forms.ModelForm):
         
         widgets = {
             "fecha" : forms.SelectDateWidget()
+            
         }
+        
+        
         

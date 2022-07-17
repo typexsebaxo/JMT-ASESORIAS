@@ -1,17 +1,12 @@
 from django.urls import path
 from django.conf import settings
-from django.contrib.auth import views as auth_views
-from django.contrib.auth.views import LoginView, LogoutView
-from . import views
 from .views import InicioSesion, Menuadmin, Admintasador, Menutasacionadmin, Graficostasacion, Notificacionesadmin, Notificacionestasador, Menutasador, Menutasaciontasador,Misproyectos, Agregar_usuario, Casaz, Casapa, CasaArn01, CasaDina, Newtasacion, Misproyectos
 
 urlpatterns = [
     path('', InicioSesion, name='iniciosesion'),
     # urls de acceso
     
-    
     # urls Libreria
-    #path('login/', loginAction, name='loginAction'),
     path('menuadmin/', Menuadmin, name='menuadmin'),
     path('tasadores/', Admintasador, name='informaciontasadores'),
     path('menutasacion/', Menutasacionadmin, name='menutasacionadmin'),
