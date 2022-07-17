@@ -15,6 +15,41 @@ from django.utils import timezone
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
+def rand_slug():
+    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
+
+
+
+class CustomAccountManager(BaseUserManager):
+    def create_user(self, correo, nombre, apellido, contrasena, **other_fields):
+
+        if not correo:
+            raise ValueError(_('You must provide an email address'))
+
+        correo = self.normalize_correo(correo)
+        user = self.model(correo=correo, nombre=nombre,
+                          apellido=apellido, **other_fields)
+        user.set_password(contrasena)
+        user.save()
+        return user
+
+    def create_superuser(self, correo, nombre, apellido, contrasena, **other_fields):
+
+        other_fields.setdefault('is_staff', True)
+        other_fields.setdefault('is_superuser', True)
+        other_fields.setdefault('is_active', True)
+
+        if other_fields.get('is_staff') is not True:
+            raise ValueError(
+                'Superuser must be assigned to is_staff=True.')
+        if other_fields.get('is_superuser') is not True:
+            raise ValueError(
+                'Superuser must be assigned to is_superuser=True.')
+
+        return self.create_user(correo, nombre, apellido, contrasena, **other_fields)
+    
+    
+
 
 class Ciudad(models.Model):
     nombre = models.CharField(primary_key=True, max_length=50)
@@ -67,17 +102,36 @@ class Tasacion(models.Model):
         return self.rut_propietario
 
 
-class Usuario(models.Model):
+class Usuario(AbstractBaseUser, PermissionsMixin):
     nombre = models.CharField(primary_key=True, max_length=50)
     apellido = models.CharField(max_length=50)
     contrasena = models.CharField(max_length=25)
-    correo = models.EmailField(max_length=30)
+    correo = models.EmailField(_('email address'), unique=True)
     telefono = models.BigIntegerField()
     permiso_rol = models.ForeignKey(Permiso, models.DO_NOTHING, db_column='permiso_rol')
+    slug = models.SlugField(max_length=255, unique=True)
+    
+    register_date = models.DateTimeField(default=timezone.now)
 
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
+    
+    objects = CustomAccountManager()
+    
+    USERNAME_FIELD = 'correo'
+    REQUIRED_FIELDS = ['contrasena', 'apellido']
+    
     class Meta:
         managed = False
         db_table = 'usuario'
         
     def __str__(self):
-        return self.nombre
+        return f'{self.contrasena} {self.apellido}'
+    
+    def get_absolute_url(self):
+        return reverse('usuarios:menutasador', args=[self.slug])
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(rand_slug() + "-" + self.correo)
+        super(Usuario, self).save(*args, **kwargs)
