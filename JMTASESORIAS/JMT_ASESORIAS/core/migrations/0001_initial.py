@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('rut_propietario', models.CharField(max_length=15, primary_key=True, serialize=False)),
                 ('propietario', models.CharField(max_length=50)),
-                ('fecha', models.DateField()),
+                ('fecha', models.DateTimeField(auto_now = True)),
                 ('documentacion', models.BinaryField()),
             ],
             options={
