@@ -15,7 +15,8 @@ def InicioSesion(request):
         'permisos':listar_permiso()
     }
     
-    return render(request,"core/iniciosession.html", data)
+    
+    return render(request,"core/iniciosesion.html", data)
 
 def InicioSession(request):
     
