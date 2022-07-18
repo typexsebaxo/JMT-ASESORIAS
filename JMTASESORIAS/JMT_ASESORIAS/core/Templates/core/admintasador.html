@@ -120,312 +120,148 @@
       </nav>
 
       <!-- Fin Navbar -->
-
-        <div class="card card-body mx-3 mx-md-4">
-            <div class="row gx-4 mb-2">
-                <div class="col-auto my-auto">
-                    <div class="h-100">
-                        <h5 class="mb-1">Tasadores</h5>
-                    </div>
+      
+      <div class="card card-body mx-3 mx-md-4">
+        <div class="row gx-4 mb-2">
+            <div class="col-auto my-auto">
+                <div class="h-100">
+                    <h5 class="mb-1">Tasadores</h5>
                 </div>
-                
-                <div class="col-lg-2 col-md-6 my-sm-auto ms-sm-auto me-sm-1 mx-auto mt-0">
-                    <div class="nav-wrapper position-relative end-3">
-                        <div class="text-center pt-2 pb-0">
-                            <a class="btn btn-primary fa-lg gradient-custom-2" href="/agregar-tasador/">Nuevo tasador!</a>
-                        </div>
+            </div>
+            
+            <div class="col-lg-2 col-md-6 my-sm-auto ms-sm-auto me-sm-1 mx-auto mt-0">
+                <div class="nav-wrapper position-relative end-3">
+                    <div class="text-center pt-2 pb-0">
+                        <a class="btn btn-primary fa-lg gradient-custom-2" href="/agregar-tasador/">Nuevo Tasador!</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="card card-body mx-3 mx-md-4 mt-4">
-
-            <div class="col-12 mt-5">
-                <div class="row">
-                  
-                  <!--<table class="table align-items-center mb-1 table-striped table-hover table-responsive-sm">
-                    <tr>
-                      <th  class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Nombre</th>
-                      <th  class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Apellido</th>
-                      <th class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Correo</th>
-                      <th class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-7">Telefono</th>
-                    </tr>
-                    <br><br>
-                    {%for p in usuarios %}
-                      <tr>
-                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.0}}</td>
-                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.1}}</td>
-                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.3}}</td>
-                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.4}}</td>
-                      </tr>
-                    {%endfor%}  
-                  </table>-->
-
-                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                    <div class="card card-blog card-plain border-1">
-                      <div class="card-header p-0 mt-n4 mx-auto">
-                        <a class="shadow-xl border-radius-xl">
-                          <img src="{% static 'core/img/avatar1.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                        </a>
-                      </div>
-                      
-                      <div class="card-body p-3">
-                        <a href="http://127.0.0.1:8000/menutasador/">
-                          <h5 class=" text-center">
-                            Paulo Rojas
-                          </h5>
-                        </a>
-                        <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                        <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; paurojas@mail.com</li>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                    <div class="card card-blog card-plain border-1">
-                      <div class="card-header p-0 mt-n4 mx-auto">
-                        <a class="shadow-xl border-radius-xl">
-                          <img src="{% static 'core/img/avatar2.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                        </a>
-                      </div>
-                      <div class="card-body p-3">
-                        <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                          <h5 class=" text-center">
-                            Danko Osorio
-                          </h5>
-                        </a>
-                        <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                        <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; danosorio@mail.com</li>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                    <div class="card card-blog card-plain border-1">
-                      <div class="card-header p-0 mt-n4 mx-auto">
-                        <a class="shadow-xl border-radius-xl">
-                          <img src="{% static 'core/img/avatar4.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                        </a>
-                      </div>
-                      <div class="card-body p-3">
-                        <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                          <h5 class=" text-center">
-                            Ivanna Contreras
-                          </h5>
-                        </a>
-                        <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                        <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; ivaacontreras@mail.com</li>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                    <div class="card card-blog card-plain border-1">
-                      <div class="card-header p-0 mt-n4 mx-auto">
-                        <a class="shadow-xl border-radius-xl">
-                          <img src="{% static 'core/img/avatar6.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                        </a>
-                      </div>
-                      <div class="card-body p-3">
-                        <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                          <h5 class=" text-center">
-                            Jorge Gonzales
-                          </h5>
-                        </a>
-                        <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                        <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; jorgonzales@mail.com</li>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    </div>
+<!--datatable-->
+<div class="container-fluid py-4 ">
+  <div class="row ">
+      <div class="col-12 ">
+          <div class="card my-4 ">                    
+              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 ">
               </div>
-
-              <div class="col-12 mt-5">
-                <div class="row">
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card card-blog card-plain border-1">
-                        <div class="card-header p-0 mt-n4 mx-auto">
-                            <a class="shadow-xl border-radius-xl">
-                            <img src="{% static 'core/img/avatar5.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                            </a>
-                        </div>
-                        <div class="card-body p-3">
-                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                            <h5 class=" text-center">
-                                Felipe Camiroaga
-                            </h5>
-                            </a>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; fepcamiroaga@mail.com</li>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card card-blog card-plain border-1">
-                        <div class="card-header p-0 mt-n4 mx-auto">
-                            <a class="shadow-xl border-radius-xl">
-                            <img src="{% static 'core/img/avatar7.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                            </a>
-                        </div>
-                        <div class="card-body p-3">
-                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                            <h5 class=" text-center">
-                                Eva Fuentes
-                            </h5>
-                            </a>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; evafuentes@mail.com</li>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card card-blog card-plain border-1">
-                        <div class="card-header p-0 mt-n4 mx-auto">
-                            <a class="shadow-xl border-radius-xl">
-                            <img src="{% static 'core/img/avatar8.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                            </a>
-                        </div>
-                        <div class="card-body p-3">
-                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                            <h5 class=" text-center">
-                                Anastasia Nieto
-                            </h5>
-                            </a>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; ananieto@mail.com</li>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card card-blog card-plain border-1">
-                        <div class="card-header p-0 mt-n4 mx-auto">
-                            <a class="shadow-xl border-radius-xl">
-                            <img src="{% static 'core/img/avatar9.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                            </a>
-                        </div>
-                        <div class="card-body p-3">
-                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                            <h5 class=" text-center">
-                                Matias Carmona
-                            </h5>
-                            </a>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; matcarnoma@mail.com</li>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="card-body px-0 pb-2">
+                  <div class="table-responsive p-0">
+                      <head>
+                            <meta content="initial-scale=1, 
+                                   maximum-scale=1, user-scalable=0" name="viewport" />
+                            <meta name="viewport" content="width=device-width" />
+                            
+                            <!--Datatable plugin CSS file -->
+                            <link rel="stylesheet" href=
+                          "https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+                            <!--jQuery library file -->
+                            <script type="text/javascript" src=
+                              "https://code.jquery.com/jquery-3.5.1.js">
+                            </script>
+                              
+                            <!--Datatable plugin JS library file -->
+                            <script type="text/javascript" src=
+                          "https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+                            </script>
+                            
+                            <style>
+                              td {
+                                text-align: center;
+                              }
+                            </style>
+                          </head>
+                            
+                          <body>
+                            
+                            
+                            <!--Datatable con filtro-->
+                            <table id="tableID" class="display table align-items-center mb-1 table-striped table-hover table-responsive-sm" 
+                                style="width: 100%">
+                              <thead>
+                                <tr>
+                                  <th class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-9">Nombre</th>
+                                  <th  class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-9">Apellido</th>
+                                  <th class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-9">Correo</th>
+                                  <th class="text-center text-uppercase bg-secondary text-white text-xxs font-weight-bolder opacity-9">Telefono</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tr>
+                              <br><br>
+                              {%for p in usuarios %}
+                                <tr>
+                                  <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.0}}</td>
+                                  <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.1}}</td>
+                                  <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.3}}</td>
+                                  <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{p.4}}</td>
+                                </tr>
+                              {%endfor%}
+                              </tbody>
+                            </table>
+                            <br />
+                            
+                            <script>
+                            
+                                /* Inicialización de tablas de datos */
+                                $(document).ready(function () {
+                            
+                                  // La paginación y otra información son
+                                  // deshabilitado si es necesario, establecido en verdadero
+                                  var myTable = $("#tableID").DataTable({
+                                    paging: true,
+                                    searching: true,
+                                    info: true,
+                                  });
+                            
+                                  // La matriz 2d se convierte en una matriz 1D
+                                  // estructura las acciones son
+                                  // implementado en CADA columna
+                                  myTable
+                                    .columns()
+                                    .flatten()
+                                    .each(function (colID) {
+                            
+                                      // Crea la lista de selección en el
+                                      // encabezado de columna de encabezado
+                                      // Al cambiar los valores de la lista,
+                                      // realizar la operación de búsqueda
+                                      var mySelectList = $("<select />")
+                                        .appendTo(myTable.column(colID).header())
+                                        .on("change", function () {
+                                          myTable.column(colID).search($(this).val());
+                            
+                                          // actualiza los cambios usando el método draw()
+                                          myTable.column(colID).draw();
+                                        });
+                            
+                                      // Obtener los datos almacenados en caché de búsqueda para el
+                                      // agregar la primera columna a la lista de selección
+                                      // usando el método append()
+                                      // ordenar los datos para mostrar al usuario
+                                      // todos los pasos se realizan para CADA columna
+                                      myTable
+                                        .column(colID)
+                                        .cache("search")
+                                        .sort()
+                                        .each(function (param) {
+                                          mySelectList.append(
+                                            $('<option value="' + param + '">'
+                                              + param + "</option>")
+                                          );
+                                        });
+                                    });
+                                });
+                            </script>
+                          </body>
+                        </html>
+                  </div>                         
               </div>
-
-              <div class="col-12 mt-5">
-                <div class="row">
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card card-blog card-plain border-1">
-                        <div class="card-header p-0 mt-n4 mx-auto">
-                            <a class="shadow-xl border-radius-xl">
-                            <img src="{% static 'core/img/avatar10.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                            </a>
-                        </div>
-                        <div class="card-body p-3">
-                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                            <h5 class=" text-center">
-                                Josue Figueroa
-                            </h5>
-                            </a>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; jorfigueroa@mail.com</li>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card card-blog card-plain border-1">
-                        <div class="card-header p-0 mt-n4 mx-auto">
-                            <a class="shadow-xl border-radius-xl">
-                            <img src="{% static 'core/img/avatar11.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                            </a>
-                        </div>
-                        <div class="card-body p-3">
-                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                            <h5 class=" text-center">
-                                Monica Guirado
-                            </h5>
-                            </a>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; monguirado@mail.com</li>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card card-blog card-plain border-1">
-                        <div class="card-header p-0 mt-n4 mx-auto">
-                            <a class="shadow-xl border-radius-xl">
-                            <img src="{% static 'core/img/avatar12.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                            </a>
-                        </div>
-                        <div class="card-body p-3">
-                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                            <h5 class=" text-center">
-                                Antoni Pérez
-                            </h5>
-                            </a>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; anperez@mail.com</li>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                        <div class="card card-blog card-plain border-1">
-                        <div class="card-header p-0 mt-n4 mx-auto">
-                            <a class="shadow-xl border-radius-xl">
-                            <img src="{% static 'core/img/avatar13.jpg' %}" alt="img-blur-shadow" class="img-fluid rounded-circle" width="60">
-                            </a>
-                        </div>
-                        <div class="card-body p-3">
-                            <a href="https://www.plataformaarquitectura.cl/cl/950069/casa-z-mda-arquitectura">
-                            <h5 class=" text-center">
-                                Marcela Lujan
-                            </h5>
-                            </a>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Región:</strong> &nbsp; Metropolitana</li>
-                            <li class="list-group-item border-0 ps-0 text-sm text-center"><strong class="text-dark">Email:</strong> &nbsp; marlujan@mail.com</li>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-        </div>
-
-
-        <!--Footer Section -->
-    
-        <footer class="footer py-4  ">
-            <div class="container-fluid">
-              <div class="row align-items-center justify-content-lg-between">
-                <div class="col-lg-6 mb-lg-0 mb-4">
-                  <div class="copyright text-center text-sm text-muted text-lg-start">
-                    ©<script>
-                      document.write(new Date().getFullYear())
-                    </script> Copyright
-                    <a href="https://jmtasesorias.cl/" class="font-weight-bold" target="_blank">JMT Asesoría Inmobiliaria</a>
-                    
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item">
-                      <a href="https://www.facebook.com/" class="nav-link text-muted" target="_blank">facebook</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="https://twitter.com/home" class="nav-link text-muted" target="_blank">twitter</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="https://www.instagram.com/" class="nav-link text-muted" target="_blank">instagram</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </footer>
-  
-  
+          </div>
+      </div>
+  </div>
+</div>
+<!--fin datatable-->
       <!-- FIN Footer Section -->
      
   
