@@ -17,6 +17,14 @@ def InicioSesion(request):
     
     return render(request,"core/iniciosession.html", data)
 
+def InicioSession(request):
+    
+    data = {
+        'permisos':listar_permiso()
+    }
+    
+    return render(request,"core/iniciosession.html", data)
+
 def Menuadmin(request):
     data = {
         'usuarios':listado_usuario()
