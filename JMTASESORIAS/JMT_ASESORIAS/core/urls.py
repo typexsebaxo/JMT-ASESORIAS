@@ -1,18 +1,14 @@
 from django.urls import path
 from django.conf import settings
-from .views import InicioSesion, Menuadmin, Admintasador, Menutasacionadmin, Graficostasacion, Notificacionesadmin, Notificacionestasador, Menutasador, Menutasaciontasador,Misproyectos, Agregar_usuario, Casaz, Casapa, CasaArn01, CasaDina, Newtasacion, Misproyectos
+from .views import InicioSesion, InicioSession, Menuadmin, Admintasador, Menutasacionadmin, Graficostasacion, Notificacionesadmin, Notificacionestasador, Menutasador, Menutasaciontasador,Misproyectos, Agregar_usuario, Casaz, Casapa, CasaArn01, CasaDina, Newtasacion, Misproyectos
 
 urlpatterns = [
     path('', InicioSesion, name='iniciosesion'),
-    # urls de acceso
-    
-    # urls Libreria
+    path('iniciosesion/', InicioSession, name='iniciosession'),
     path('menuadmin/', Menuadmin, name='menuadmin'),
     path('tasadores/', Admintasador, name='informaciontasadores'),
     path('menutasacion/', Menutasacionadmin, name='menutasacionadmin'),
     path('graficostasacion/', Graficostasacion, name='graficostasacion'),
-    #path('notificacionesadmin/', Notificacionesadmin, name='notificacionesadmin'),
-    #path('notificacionestasador/', Notificacionestasador, name='notificacionestasador'),
     path('menutasador/', Menutasador, name='menutasador'),
     path('tasaciones-tasador/', Menutasaciontasador, name='tasaciones-tasador'),
     path('misproyectos/', Misproyectos, name='misproyectos'),

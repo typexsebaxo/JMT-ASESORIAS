@@ -23,7 +23,6 @@ class Ciudad(models.Model):
 
 class Permiso(models.Model):
     rol = models.CharField(primary_key=True, max_length=10)
-    id = models.IntegerField()
 
     class Meta:
         managed = False

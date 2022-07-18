@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white active bg-gradient-primary " href="/admintasador/">
+                    <a class="nav-link text-white active bg-gradient-primary " href="/agregar-tasador/">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa fa-user-o" aria-hidden="true"></i>
                     </div>
@@ -122,16 +122,12 @@
                     <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-body font-weight-bold px-2">
-                        <h6 class="fa fa-clock-o" id="display-time">
-                            <script>
-                                function myFunc()  {
-                                    var now = new Date();
-                                    var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-                                    document.getElementById('display-time').innerHTML = time;
-                                }
-                                setInterval(myFunc, 1000);
-                            </script>
-                        </h6>
+                            <h6>
+                                <!--reloj-->
+                         <a href="https://24timezones.com" style="text-decoration: none" class="clock24" id="tz24-1657769037-c1232-eyJob3VydHlwZSI6IjI0Iiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIxIiwic2hvd3RpbWV6b25lIjoiMCIsInR5cGUiOiJkIiwibGFuZyI6ImVzIn0=" title="hora local" target="_blank"></a>
+                         <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+                         <!--fin reloj-->
+                            </h6>
                         </a>
                     </li>
                     </ul>  
